@@ -37,19 +37,19 @@
 // }
 
 // Daily Exercise 3
-var name = {
-    fname: 'first',
-    lname: 'last',
-};
+// var name = {
+//     fname: 'first',
+//     lname: 'last',
+// };
 
 
-var makeEmailObj = name.map(function('first','last'){
+// var makeEmailObj = name.map(function('first','last'){
 
-    return first;
-});
+//     return first;
+// });
 
 
 
-console.log(makeEmailObj);
+// console.log(makeEmailObj);
 
 
