@@ -19,21 +19,56 @@
 
 
 
-function assertEquals(){
-    var n1 =  "p1";
-    var n2 =  "p2";
-    if ( n1 === n2){
+// function assertEquals(){
+//     var n1 =  "p1";
+//     var n2 =  "p2";
+//     if ( n1 === n2){
+//         return true;
+//     }else if( n1!=n2 ){
+//        console.log("the two values are not the same:");
+//        //console.log("hello");
+//        console.log(n1,"p1-->");
+//        console.log(n2,"p1-->");
+//        return false;
+//     }
+    
+// };
+//Second try
+
+
+// const function() = {
+//          add: (num1, num2) => num1 + num2,
+    
+//          assertEquals: (num1, num2 =>{
+//              if (num1 === num2){
+//                  return true
+//              }
+//              else{
+//                  console.log("hey")
+//                  console.log("hi")
+//                  console.log("ho")
+//                  return false;
+//              }
+//          }
+// };
+
+    
+function essertEqual(){
+let num = [num1, num2];
+// let add = (num1 + num2);
+    if (num1 === num2){
         return true;
-    }else if( n1!=n2 ){
-       console.log("the two values are not the same:");
+    }
+    else if (num1 =! num2){
+        console.log("the two values are not the same:");
        //console.log("hello");
        console.log(n1,"p1-->");
        console.log(n2,"p1-->");
        return false;
     }
+}
+     
     
-};
-//
 
 
 
