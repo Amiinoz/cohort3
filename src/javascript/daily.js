@@ -1,4 +1,13 @@
 
+let name = { 
+    fname: 'first',
+    lname: 'last'
+};
+// let makeEmailObj = Object.values(name);
+// const makeEmailObj = name.map(x => x*2);
+// console.log(makeEmailObj);
+
+
 //makeEmailArr
 const functions = {
    makeEmailArr:(arr) =>{
