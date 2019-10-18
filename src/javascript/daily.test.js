@@ -1,5 +1,11 @@
 import functions from './daily.js'
 
+
+test('basic for loop', () => {
+    expect(functions.makeBasicLoop([0,1,2,3,4,5,6]))
+    .toEqual([0,1,2,3,4,5,6])
+});
+
 /*
 Write the function to format an email based on an object / map
 */
