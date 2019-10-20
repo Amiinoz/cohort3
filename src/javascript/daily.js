@@ -3,6 +3,59 @@ import {
 } from "@babel/types";
 
 const functions = {
+    
+    // Advanced Arrays forEach
+    makeForEach: () => {
+    const array = [2,4,20,30];
+    const double = [];
+    const newArray = array.forEach((num) => {
+        double.push(num*2);
+        console.log(double);
+    })
+},
+
+
+
+    // for of loop
+     //TODO:
+    //  makeForOfLoop: () => {
+    //     let cowSays =  "moo";
+    //     for (let value of cowSays){
+    //         console.log(value);
+    //     }
+    //  },
+    //FIXME:
+    // for in loop
+     makeForInLoop: (object1) =>{
+        const person = {
+            name:"Mark",
+            Age: 23,
+            Occupation: "Lawyer"
+        };
+         
+         for (let item in person.name){
+            return(person.Occupation);
+
+         }
+     },
+    // do while loop
+    makeDoWhileLoop: () => {
+        let counter = 5;
+        do{
+            return(counter);
+                counter ++;
+            }
+            while(counter > 0)
+    },
+    // while loop
+    makeBasicWhileLoop: () => {
+        let nums = 6;
+        while(nums < 7){
+           return nums;
+           nums++;
+        }
+    },
+  
     // Forloop
     makeBasicLoop: () =>{
          let array1 =[];
