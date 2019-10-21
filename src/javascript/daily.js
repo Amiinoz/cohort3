@@ -3,16 +3,19 @@ import {
 } from "@babel/types";
 
 const functions = {
+
+
+    
     
     // Advanced Arrays forEach
-    makeForEach: () => {
-    const array = [2,4,20,30];
-    const double = [];
-    const newArray = array.forEach((num) => {
-        double.push(num*2);
-        console.log(double);
-    })
-},
+//     makeForEach: () => {
+//     const array = [2,4,20,30];
+//     const double = [];
+//     const newArray = array.forEach((num) => {
+//         double.push(num*2);
+//         console.log(double);
+//     })
+// },
 
 
 

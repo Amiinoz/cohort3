@@ -1,14 +1,42 @@
 import functions from './daily.js'
 import { tsThisType } from '@babel/types';
 
+
+// *
+//     Sample data for the next few exercises.
+// */
+
+const data = {
+    staff: [
+        { fname: "Jane", lname: "Smith", balance: 10 },
+        { fname: "Liam", lname: "Henry", balance: 1000 },
+        { fname: "Emma", lname: "Jones", balance: 1330 },
+        { fname: "Olivia", lname: "Notly", balance: 310 },
+        { fname: "Noah", lname: "Ho", balance: 503 },
+        { fname: "William", lname: "Lee", balance: 520 },
+        { fname: "Benjamin", lname: "Amis", balance: 150 },
+    ],
+    company: "EvolveU",
+    city: "Calgary",
+    prov: "Alberta"
+};
+
+
+/*	
+	Write the function to build email addresses for the company.
+*/
+
+test('email builder for company', () => {
+    const staffEmail = functions.loopStaff(data.staff);
+
 /* 
 Test forEach
 */
-test('Advanced arrays forEach', () =>{
-    expect(functions.makeForEach([newArray]))
-        .toEqual([2,4,20,32])
+// test('Advanced arrays forEach', () =>{
+//     expect(functions.makeForEach([newArray]))
+//         .toEqual([2,4,20,32])
 
-}),
+// }),
 
 /* 
 Test for of
