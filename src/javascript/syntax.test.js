@@ -19,5 +19,5 @@ test('Using undefined', () => {
     expect(functions.returnUndefined()).toEqual(undefined);
 });
 test('Using if else statement', () => {
-    expect(functions.getTime()).toBeThtuthy(" Good morning");
+    expect(functions.getTime()).toBeThtuthy("Good morning");
 });
