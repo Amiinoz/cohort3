@@ -1,3 +1,5 @@
+import { objectExpression } from "@babel/types";
+
 // Solve the below problems:
 
 // #1) Line up the Turtle and the Rabbit at the start line:
@@ -6,7 +8,7 @@ let turtle = '🐢';
 let rabbit = '🐇';
 
 turtle.padStart(25);
-turtle(25);
+rabbit.padStart(27);
 
 // it should look like this:
 '     ||<- Start line'
@@ -23,6 +25,8 @@ console.log(rabbit);
 // Read about what the second parameter does in padEnd and padStart
 turtle = turtle.trim().padEnd(9, '=');
 
+"🐢======="
+
 
 // #3) Get the below object to go from:
 let obj = {
@@ -32,3 +36,6 @@ let obj = {
 }
 // to this:
 'my name is Rudolf the raindeer'
+
+Object.entries(obj).map(value => 
+  value.join(" ")).join(' ')
