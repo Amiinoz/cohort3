@@ -3,14 +3,63 @@ import {
 } from "@babel/types";
 
 const functions = {
+   
+    makeSlice: () => {
+        var fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+        var citrus = fruits.slice(1, 3);
+        return citrus;
+    },
 
-    makeForOfLoop: (arr) => {
-        const airLines1 = ['United', 'WestJet', 'AirCanada'];
+    makeSplice: () => {
+        const array = [1, 2, 3, 4, 5];
+        return (array.splice(2));
+    },
+
+    makeForeach: () => {
+        const array = [1, 2, 10, 17];
+        const double = [];
+        const newArray = array.forEach((num) => {
+            double.push(num * 2);
+        })
+        return double;
+
+    },
+
+    makeMap: (arr) => {
+        const newNums = [1, 2, 10, 16];
+        const mapNums = newNums.map(num => num * 2);
+        return mapNums;
+    },
+
+    makeReduce: (arr) => {
+        var arr = [1, 2, 3, 4];
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            return sum;
+        }
+    },
+
+    makeFilter: arr => {
+        const array = [3, 6, 9];
+        const filteredArray = array.filter(num => num < 5);
+        return filteredArray;
+    },
+
+    makeSort: arr => {
+        const months = ["March", "Jan", "Feb", "Dec"];
+        months.sort();
+        return months[0];
+    },
+
+    makeForOfLoop: arr => {
+        const airLines1 = ["United", "WestJet", "AirCanada"];
         let item;
         for (item of airLines1) {
             return item;
         }
     },
+
     makeForInLoop: (obj) => {
         let person = {
             name: "Mark",
@@ -21,18 +70,18 @@ const functions = {
         let i;
         for (i in person) {
             personalInfo += person[i] + "";
-        };
+        }
         return personalInfo;
-
     },
+
     makeDoWhileLoop: () => {
         let counter = 5;
         do {
-            return (counter);
+            return counter;
             counter++;
-        }
-        while (counter > 0)
+        } while (counter > 0);
     },
+
     makeBasicWhileLoop: () => {
         let nums = 6;
         while (nums < 7) {
@@ -40,6 +89,7 @@ const functions = {
             nums++;
         }
     },
+
     makeBasicLoop: () => {
         let array1 = [];
         for (let i = 0; i <= 6; i++) {
@@ -47,13 +97,16 @@ const functions = {
         }
         return array1;
     },
-    makeEmailObj: (obj) => {
-        return (obj.fname.toLowerCase() + "." + obj.lname.toLowerCase() + "@evolveu.ca");
 
+    makeEmailObj: obj => {
+        return (
+            obj.fname.toLowerCase() + "." + obj.lname.toLowerCase() + "@evolveu.ca"
+        );
     },
-    makeEmailArr: (arr) => {
+
+    makeEmailArr: arr => {
         console.log(arr[0]);
-        return (arr[0].toLowerCase() + '.' + arr[1].toLowerCase() + "@evolveu.ca");
+        return arr[0].toLowerCase() + "." + arr[1].toLowerCase() + "@evolveu.ca";
         let button = document.getElementById("btn");
         let input = document.getElementById("inpt").value;
 
@@ -66,26 +119,7 @@ const functions = {
         }
 
         button.addEventListener("click", onButtonClicked);
-    },
-
-
-
+    }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default functions;

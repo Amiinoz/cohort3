@@ -1,5 +1,26 @@
 import { objectExpression } from "@babel/types";
 
+
+
+//////// ---------TESTING ----------//////////////
+// . JS
+
+const functions = {
+
+    helloWorld: () =>{
+        console.log("Hello world from larry calc");
+    }   
+};
+export default functions;
+// test . JS
+import functions from './larrycalc.js'
+
+test("larrytest ", () => {
+    console.log("hello world");
+  functions.helloWorld();
+});
+
+////////--------------TESTING----------////////
 // 100% test covarage
 // 1. Write stub
 // 2.write failing test
@@ -8,6 +29,37 @@ import { objectExpression } from "@babel/types";
 // 5.repeat
 // 6.refactor
 
+
+//BASICS
+// Basics➤
+// On page script
+<script type="text/javascript">  ...
+</script>
+Include external JS file
+<script src="filename.js"></script>
+Delay - 1 second timeout
+setTimeout(function () {
+	
+}, 1000);
+Functions
+function addNumbers(a, b) {
+    return a + b; ;
+}
+x = addNumbers(1, 2);
+
+
+// Variables X
+var a;                          // variable
+var b = "init";                 // string
+var c = "Hi" + " " + "Joe";     // = "Hi Joe"
+var d = 1 + 2 + "3";            // = "33"
+var e = [2,3,5,8];              // array
+var f = false;                  // boolean
+var g = /()/;                   // RegEx
+var h = function(){};           // function object
+const PI = 3.14;                // constant
+var a = 1, b = 2, c = a + b;    // one line
+let z = 'zzz';                  // block scope local
 
 
 // ___________________
