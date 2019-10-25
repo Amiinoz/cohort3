@@ -1,7 +1,6 @@
 import functions from "./daily.js";
 import { tsThisType } from "@babel/types";
 
-// test("email builder for company", () => {
 const data = {
   staff: [
       { fname: "Jane", lname: "Smith", balance: 10 },
@@ -26,12 +25,6 @@ test('email builder for company', () => {
   expect(staffEmail[6])
       .toEqual("benjamin.amis@evolveu.ca");
 });
-
-//   const staffEmail = functions.loopStaff(data.staff);
-//   expect(staffEmail[0]).toEqual("jane.smith@evolveu.ca");
-//   expect(staffEmail[3]).toEqual("olivia.notly@evolveu.ca");
-//   expect(staffEmail[6]).toEqual("benjamin.amis@evolveu.ca");
-// });
 
 test("Make slice", () => {
   expect(functions.makeSlice()).toEqual(["Orange", "Lemon"]);
@@ -116,4 +109,4 @@ test("email builder from an array", () => {
     "bill.smith@evolveu.ca"
   );
 });
-// });
+
