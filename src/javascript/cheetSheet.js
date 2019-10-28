@@ -1,4 +1,4 @@
-import { objectExpression } from "@babel/types";
+import { objectExpression, functionExpression, numericLiteral, numberLiteralTypeAnnotation } from "@babel/types";
 
 
 
@@ -86,3 +86,8 @@ Object.entries(obj).forEach(value => {
 Object.entries(obj).map(value => {
     return value[1] + value[0].replace(',' , '');
     });
+
+
+
+    // ------------------------------------.MAP()-------------------------------------
+

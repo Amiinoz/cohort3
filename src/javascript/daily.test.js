@@ -16,6 +16,20 @@ const data = {
   prov: "Alberta"
 };
 
+const staffEmail = functions.loopStaffIn(data.staff);
+// Write your tests here
+test('loop for in staff', () =>{
+  
+  expect(staffEmail[1])
+    .toEqual("Liam.Henry@evolveu.ca");
+      expect(staffEmail[4])
+        .toEqual("Olivia.Notly@evolveu.ca")
+
+});
+
+const staffEmail = functions.loopStaffOf(data.staff);
+// Write your tests here
+
 test('email builder for company', () => {
   const staffEmail = functions.loopStaff(data.staff);
   expect(staffEmail[0])

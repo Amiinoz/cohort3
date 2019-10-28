@@ -3,7 +3,29 @@ import {
   arrayTypeAnnotation
 } from "@babel/types";
 
+
+
 const functions = {
+
+  loopStaffIn: (data) =>{
+    const staffEmail = "";
+    
+
+
+for(let i = 0; i < data.length; i++){
+
+let childArray = myArray[i].child;
+
+for(let j = 0; j < childArray.length; j++){
+
+console.log(childArray[j]);
+
+}
+
+}
+
+  },
+
   loopStaff: (data) => {
     const email = [];
     for (let i = 0; i < data.length; i++){
