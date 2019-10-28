@@ -76,3 +76,59 @@ html {
         min-height: 400px;
     }
 }
+
+/* My calculator */
+.container {
+    margin: 0 auto;
+    width:280px;
+    height:462px;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 5px 3px 5px #2c2a2a;
+}
+.container #input{
+    width:100%;
+    padding: 55px 10px;
+    border: none;
+    outline: none;
+    font-size: 40px;
+    background: rgb(231, 231, 231);
+    font-family: 'Noto Serif', serif;
+}
+
+.container .btn-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.container .btn-container .btns{
+    font-size: 14px;
+    padding:28px;
+    border: 1px solid rgb(37, 35, 35);
+    background: #141516;
+    color: #fff;
+    outline: none;
+    transition: 500ms border;
+    
+}
+
+.container .btn-container .btns:focus{
+    border: 1px solid rgb(78, 77, 77);
+}
+
+#equal{
+    font-size: 14px;
+    padding:28px;
+    border: 1px solid rgb(37, 35, 35);
+    color: #fff;
+    outline: none;
+    transition: 500ms border;
+}
+
+#clear{
+    font-size: 14px;
+    padding:28px;
+    border: 1px solid rgb(37, 35, 35);
+    color: #fff;
+    outline: none;
+    transition: 500ms border;
+}

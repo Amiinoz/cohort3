@@ -29,7 +29,7 @@ const functions = {
             case "AccNumber":
                 return [237702, 33400];
             default:
-                return 237702;     
+                return 237702;
         }
     },
     returnUndefined: () => {
@@ -119,7 +119,7 @@ const functions = {
         return double;
     },
 
-    objectDictonaries: () =>{
+    objectDictonaries: () => {
         const user = {
             name: "John",
             age: 34,
@@ -127,11 +127,7 @@ const functions = {
             isSingle: true
         };
         return (user.isSingle);
-
-        
     },
-
-    // ----lookup key to retrieve value
 
 };
 

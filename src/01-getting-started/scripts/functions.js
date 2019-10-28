@@ -1,5 +1,9 @@
 
 const functions = {
+
+   
+
+
     
     size: (num) => {
         if (num < 10) return "small";
