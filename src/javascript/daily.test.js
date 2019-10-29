@@ -3,41 +3,26 @@ import { tsThisType } from "@babel/types";
 
 const data = {
   staff: [
-      { fname: "Jane", lname: "Smith", balance: 10 },
-      { fname: "Liam", lname: "Henry", balance: 1000 },
-      { fname: "Emma", lname: "Jones", balance: 1330 },
-      { fname: "Olivia", lname: "Notly", balance: 310 },
-      { fname: "Noah", lname: "Ho", balance: 503 },
-      { fname: "William", lname: "Lee", balance: 520 },
-      { fname: "Benjamin", lname: "Amis", balance: 150 },
+    { fname: "Jane", lname: "Smith", balance: 10 },
+    { fname: "Liam", lname: "Henry", balance: 1000 },
+    { fname: "Emma", lname: "Jones", balance: 1330 },
+    { fname: "Olivia", lname: "Notly", balance: 310 },
+    { fname: "Noah", lname: "Ho", balance: 503 },
+    { fname: "William", lname: "Lee", balance: 520 },
+    { fname: "Benjamin", lname: "Amis", balance: 150 }
   ],
   company: "EvolveU",
   city: "Calgary",
   prov: "Alberta"
 };
 
-const staffEmail = functions.loopStaffIn(data.staff);
-// Write your tests here
-test('loop for in staff', () =>{
-  
-  expect(staffEmail[1])
-    .toEqual("Liam.Henry@evolveu.ca");
-      expect(staffEmail[4])
-        .toEqual("Olivia.Notly@evolveu.ca")
 
-});
-
-const staffEmail = functions.loopStaffOf(data.staff);
-// Write your tests here
-
-test('email builder for company', () => {
+test("email builder for company", () => {
   const staffEmail = functions.loopStaff(data.staff);
-  expect(staffEmail[0])
-      .toEqual("jane.smith@evolveu.ca");
-  expect(staffEmail[3])
-      .toEqual("olivia.notly@evolveu.ca");
-  expect(staffEmail[6])
-      .toEqual("benjamin.amis@evolveu.ca");
+  
+  expect(staffEmail[0]).toEqual("jane.smith@evolveu.ca");
+  expect(staffEmail[3]).toEqual("olivia.notly@evolveu.ca");
+  expect(staffEmail[6]).toEqual("benjamin.amis@evolveu.ca");
 });
 
 test("Make slice", () => {
@@ -123,4 +108,3 @@ test("email builder from an array", () => {
     "bill.smith@evolveu.ca"
   );
 });
-

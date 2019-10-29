@@ -9,7 +9,7 @@ idNumber.addEventListener('change', (() => {
     idNumberSize.textContent = functions.size(idNumber.value);
 }));
 
-// / ------------------My calculator------------------
+// My calculator-----
 // slecting Elements 
 const btns = document.querySelectorAll('.btns');
 const input = document.getElementById('input');
@@ -27,7 +27,7 @@ btns.forEach((btn) => {
     });
 });
 
-//equal btn event
+//equal the btn event
 equal.addEventListener('click', () => {
     if (input.value) {
         let finalValue = eval(input.value);
@@ -38,7 +38,7 @@ equal.addEventListener('click', () => {
 
     }
 });
-//clear btn event
+//clear the btn event
 clear.addEventListener('click', () => {
     let valueLength = input.value.length;
 

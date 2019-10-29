@@ -1,38 +1,18 @@
-import {
-  objectExpression,
-  arrayTypeAnnotation
-} from "@babel/types";
-
-
+import { objectExpression, arrayTypeAnnotation } from "@babel/types";
 
 const functions = {
+ 
 
-  loopStaffIn: (data) =>{
-    const staffEmail = "";
+  loopStaff: (a) => {
     
-
-
-for(let i = 0; i < data.length; i++){
-
-let childArray = myArray[i].child;
-
-for(let j = 0; j < childArray.length; j++){
-
-console.log(childArray[j]);
-
-}
-
-}
-
-  },
-
-  loopStaff: (data) => {
-    const email = [];
-    for (let i = 0; i < data.length; i++){
-      // console.log(data[i]);
-     let staffEmail = functions.makeEmailObj(data[i]);
-    email.push(staffEmail);
-  } return email;
+    let email =[];
+    for (let i = 0; i < a.length; i++) {
+      // console.log(a[i]);
+      let staffEmail = functions.makeEmailObj(a[i]);
+      email.push(staffEmail);
+     
+    }
+    return email;
   },
 
   makeSlice: () => {
