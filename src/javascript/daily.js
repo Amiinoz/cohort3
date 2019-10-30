@@ -1,16 +1,35 @@
 import { objectExpression, arrayTypeAnnotation } from "@babel/types";
 
 const functions = {
- 
+  //FIXME:
 
-  loopStaff: (a) => {
-    
-    let email =[];
-    for (let i = 0; i < a.length; i++) {
-      // console.log(a[i]);
-      let staffEmail = functions.makeEmailObj(a[i]);
+
+  loopStaffOf: (staff) => {
+    // console.log(staff);
+    let email = [];
+    for( const value of staff){
+      let staffEmail = functions.makeEmailObj(value);
       email.push(staffEmail);
      
+    }
+    return email;
+  
+
+  },
+  loopStaffIn: (staff) => {
+    let email = [];
+    for (let i in staff) {
+      let staffEmail = functions.makeEmailObj(staff[i]);
+      email.push(staffEmail);
+    }
+    return email;
+  },
+
+  loopStaff: a => {
+    let email = [];
+    for (let i = 0; i < a.length; i++) {
+      let staffEmail = functions.makeEmailObj(a[i]);
+      email.push(staffEmail);
     }
     return email;
   },

@@ -17,9 +17,19 @@ const data = {
 };
 
 
+test("Company eamil for of loop", () => {
+  const staffEmail = functions.loopStaffOf(data.staff);
+  expect(staffEmail[6]).toEqual("benjamin.amis@evolveu.ca");
+
+});
+
+test("Company email for in loop", () => {
+  const staffEmail = functions.loopStaffIn(data.staff);
+  expect(staffEmail[0]).toEqual("jane.smith@evolveu.ca");
+});
 test("email builder for company", () => {
   const staffEmail = functions.loopStaff(data.staff);
-  
+
   expect(staffEmail[0]).toEqual("jane.smith@evolveu.ca");
   expect(staffEmail[3]).toEqual("olivia.notly@evolveu.ca");
   expect(staffEmail[6]).toEqual("benjamin.amis@evolveu.ca");
