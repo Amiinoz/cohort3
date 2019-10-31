@@ -1,22 +1,38 @@
 import { objectExpression, arrayTypeAnnotation } from "@babel/types";
 
 const functions = {
-  //FIXME:
+  //FIXME: change benjamin to Benjamin  .toUperCase()
 
+  loopStaffMap: staff => {
 
-  loopStaffOf: (staff) => {
-    // console.log(staff);
+    // arr[0].toLowerCase()
+    // staff[0].uperCase()
+    console.log(staff[6]);
+    let empemail = [];
+    const newStaffEm = staff.map( item => {
+      let staffEmail = functions.makeEmailObj(staff[6]);
+      empemail.push(staffEmail);
+    });
+    return empemail;
+  },
+  loopStaffForEach: staff => {
+    console.log(staff[3]);
+    let empEmail = [];
+    const newStaff = staff.forEach(() => {
+      let staffEmail = functions.makeEmailObj(staff[3]);
+      empEmail.push(staffEmail);
+    });
+    return empEmail;
+  },
+  loopStaffOf: staff => {
     let email = [];
-    for( const value of staff){
+    for (const value of staff) {
       let staffEmail = functions.makeEmailObj(value);
       email.push(staffEmail);
-     
     }
     return email;
-  
-
   },
-  loopStaffIn: (staff) => {
+  loopStaffIn: staff => {
     let email = [];
     for (let i in staff) {
       let staffEmail = functions.makeEmailObj(staff[i]);

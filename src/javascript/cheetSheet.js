@@ -3,22 +3,7 @@ import { objectExpression, functionExpression, numericLiteral, numberLiteralType
 
 
 //////// ---------TESTING ----------//////////////
-// . JS
 
-const functions = {
-
-    helloWorld: () =>{
-        console.log("Hello world from larry calc");
-    }   
-};
-export default functions;
-// test . JS
-import functions from './larrycalc.js'
-
-test("larrytest ", () => {
-    console.log("hello world");
-  functions.helloWorld();
-});
 
 ////////--------------TESTING----------////////
 // 100% test covarage
@@ -28,6 +13,25 @@ test("larrytest ", () => {
 // 4.write onother test
 // 5.repeat
 // 6.refactor
+
+
+
+////////--------------FOREACH----------////////
+
+let daworves = ['Billuf', 'Browfell', 'Fill', 'Roger'];
+
+daworves.forEach( function (item, index, array){
+        if (item === 'Billuf'){
+            item = item.toUpperCase();
+        }else{
+            item = item.toLowerCase();
+        }
+        console.log(index, item);
+});
+
+
+
+////////--------------FOREACH----------////////
 
 
 //BASICS

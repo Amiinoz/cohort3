@@ -16,11 +16,22 @@ const data = {
   prov: "Alberta"
 };
 
+//FIXME: change benjamin to Benjamin  .toUperCase()
 
-test("Company eamil for of loop", () => {
+test("Company email for map", () => {
+  const staffEmail = functions.loopStaffMap(data.staff);
+    expect(staffEmail[6]).toEqual("benjamin.amis@evolveu.ca");
+});
+
+
+test(" Comany email forEach", () => {
+  const staffEmail = functions.loopStaffForEach(data.staff);
+  expect(staffEmail[3]).toEqual("olivia.notly@evolveu.ca");
+});
+
+test("Company email for of loop", () => {
   const staffEmail = functions.loopStaffOf(data.staff);
   expect(staffEmail[6]).toEqual("benjamin.amis@evolveu.ca");
-
 });
 
 test("Company email for in loop", () => {
