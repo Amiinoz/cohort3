@@ -1,4 +1,11 @@
 import functions from './functions.js';
+import calcFunctions from './calc.js';
+import calcTaxFunctions from './calcTax.js';
+import workArraysFunctions from './workArrays.js';
+import dictFunctions from './dict.js';
+
+
+
 
 // **********
 //
@@ -15,6 +22,7 @@ const btns = document.querySelectorAll('.btns');
 const input = document.getElementById('input');
 const equal = document.getElementById('equal');
 const clear = document.getElementById('clear');
+
 
 
 // btns
@@ -46,3 +54,38 @@ clear.addEventListener('click', () => {
     input.value = finalValueOutput;
     
 });
+
+
+// My Tax Calculator start-----
+ 
+
+
+// My Tax Calculator End-----
+
+// My Working with Arrays start-----
+const arrButton = document.getElementById('add');
+const arrInput = document.getElementById('inp')[1];
+
+arrButton.addEventListener('click', () => {
+ return addArray;
+});
+
+
+
+
+
+
+
+
+// My Working with Arrays end-----
+
+// My Dict start-----
+
+ 
+
+// My Dict end-----
+
+
+
+
+

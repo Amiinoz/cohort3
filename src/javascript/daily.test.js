@@ -20,9 +20,8 @@ const data = {
 
 test("Company email for map", () => {
   const staffEmail = functions.loopStaffMap(data.staff);
-    expect(staffEmail[6]).toEqual("benjamin.amis@evolveu.ca");
+  expect(staffEmail[6]).toEqual("benjamin.amis@evolveu.ca");
 });
-
 
 test(" Comany email forEach", () => {
   const staffEmail = functions.loopStaffForEach(data.staff);

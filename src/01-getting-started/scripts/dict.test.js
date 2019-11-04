@@ -1,0 +1,1 @@
+import dictFunctions from './dict'
