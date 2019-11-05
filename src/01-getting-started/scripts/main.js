@@ -67,7 +67,7 @@ const arrButton = document.getElementById('add');
 const arrInput = document.getElementById('inp')[1];
 
 arrButton.addEventListener('click', () => {
- return addArray;
+
 });
 
 

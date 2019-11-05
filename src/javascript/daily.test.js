@@ -1,5 +1,4 @@
 import functions from "./daily.js";
-import { tsThisType } from "@babel/types";
 
 const data = {
   staff: [
@@ -16,7 +15,18 @@ const data = {
   prov: "Alberta"
 };
 
-//FIXME: change benjamin to Benjamin  .toUperCase()
+test("Mo test ", () => {
+  expect(functions.helloWorld()).toEqual("Hello world from here!");
+});
+
+test("Return the avarage balance", () => {
+  expect(functions.avarageBalance(data.staff)).toEqual(546);
+});
+
+test("Return total balance", () => {
+  const staffEmail = functions.totalValue(data.staff);
+  expect(staffEmail).toEqual(3823);
+});
 
 test("Company email for map", () => {
   const staffEmail = functions.loopStaffMap(data.staff);

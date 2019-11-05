@@ -1,22 +1,37 @@
 import { objectExpression, arrayTypeAnnotation } from "@babel/types";
 
 const functions = {
-  //FIXME: change benjamin to Benjamin  .toUperCase()
+  helloWorld: () => {
+    return "Hello world from here!";
+  },
+  // More Array Exercises - 2019 -10 29 
 
+  avarageBalance: staff => {
+    let initialValue = 0;
+    let sum = staff.reduce(function(total, currentValue) {
+      return total + currentValue.balance;
+    }, initialValue);
+    return Math.round(sum / staff.length);
+  },
+
+  totalValue: staff => {
+    let initialValue = 0;
+    let sum = staff.reduce(function(total, currentValue) {
+      return total + currentValue.balance;
+    }, initialValue);
+    return sum;
+  },
+// loopStaff each / map Exercises - 2019 -10 25
   loopStaffMap: staff => {
-
-    // arr[0].toLowerCase()
-    // staff[0].uperCase()
-    console.log(staff[6]);
     let empemail = [];
-    const newStaffEm = staff.map( item => {
+    const newStaffEm = staff.map(item => {
       let staffEmail = functions.makeEmailObj(staff[6]);
       empemail.push(staffEmail);
     });
     return empemail;
   },
+
   loopStaffForEach: staff => {
-    console.log(staff[3]);
     let empEmail = [];
     const newStaff = staff.forEach(() => {
       let staffEmail = functions.makeEmailObj(staff[3]);
@@ -24,6 +39,7 @@ const functions = {
     });
     return empEmail;
   },
+  // loopStaff: in / of  Exercises - 2019 -10 24
   loopStaffOf: staff => {
     let email = [];
     for (const value of staff) {
@@ -40,7 +56,7 @@ const functions = {
     }
     return email;
   },
-
+// loopStaff Exercises - 2019 -10 22
   loopStaff: a => {
     let email = [];
     for (let i = 0; i < a.length; i++) {
@@ -49,7 +65,7 @@ const functions = {
     }
     return email;
   },
-
+  // More Array Work - 2019-10-16-17 
   makeSlice: () => {
     var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
     var citrus = fruits.slice(1, 3);
@@ -148,9 +164,8 @@ const functions = {
       obj.fname.toLowerCase() + "." + obj.lname.toLowerCase() + "@evolveu.ca"
     );
   },
-
+// makeEmailObj - 2019 -10 11
   makeEmailArr: arr => {
-    console.log(arr[0]);
     return arr[0].toLowerCase() + "." + arr[1].toLowerCase() + "@evolveu.ca";
     let button = document.getElementById("btn");
     let input = document.getElementById("inpt").value;

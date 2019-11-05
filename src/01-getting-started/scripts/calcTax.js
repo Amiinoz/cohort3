@@ -1,5 +1,7 @@
 const calcTaxFunctions = {
-
+    helloWorld: () => {
+        return "Hello world from here!";
+      },
 };
 
 
