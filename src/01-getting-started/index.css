@@ -142,3 +142,9 @@ html {
     padding-bottom: 42px;
 }
 
+.massValue li {
+    list-style-type:none;
+};
+
+
+

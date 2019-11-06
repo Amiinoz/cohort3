@@ -14,10 +14,46 @@ const data = {
   city: "Calgary",
   prov: "Alberta"
 };
-
 test("Mo test ", () => {
   expect(functions.helloWorld()).toEqual("Hello world from here!");
 });
+test('Return array with balance greather then 1000', () =>{
+  const fakeObjArr = [{ fname: "Rob", lname: "Loban", balance: 2500}];
+  expect(functions.balanceGreater(fakeObjArr)).toEqual([2500]);
+  expect(functions.balanceGreater(data.staff)).toEqual([1000, 1330]);
+});
+
+// Daily Exercise 2019-11-05
+test('How do pointers work', () => {
+  console.log("Reference");
+  const a = {"name":"Larry", "bal":10};
+  const arr = [];
+  const obj = {};
+  arr.push(a);
+  obj[a.name] = a;
+  
+  expect(a.bal).toBe(10);
+  expect(arr[0].bal).toBe(10);
+  expect(obj[a.name].bal).toBe(10);
+  expect(obj.Larry.bal).toBe(10);
+
+  a.bal+=1;
+  expect(a.bal).toBe(11);
+  expect(arr[0].bal).toBe(11);
+  expect(obj[a.name].bal).toBe(11);
+  expect(obj.Larry.bal).toBe(11);
+
+  // a = "";
+  addThree(a);
+  expect(a.bal).toBe(14);
+  expect(arr[0].bal).toBe(14);
+  expect(obj[a.name].bal).toBe(14);
+  expect(obj.Larry.bal).toBe(14);
+});
+
+function addThree(thing) {
+  thing.bal = thing.bal + 3;
+}
 
 test("Return the avarage balance", () => {
   expect(functions.avarageBalance(data.staff)).toEqual(546);

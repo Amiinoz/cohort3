@@ -1,0 +1,16 @@
+
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  .basic-dom{
+      width: 500px;
+      height: 800px;
+      background-color: rgb(231, 131, 8);
+  }

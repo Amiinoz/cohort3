@@ -4,8 +4,15 @@ const functions = {
   helloWorld: () => {
     return "Hello world from here!";
   },
+  //More Array Exercises (Really) - 2019 -11-06
+ 
+  balanceGreater: (objArr) =>{
+   
+    const arrayOfBalance = objArr.map(a => a.balance);
+    const arrLargeNum = arrayOfBalance.filter(balance => balance >= 1000);
+    return arrLargeNum;
+  },
   // More Array Exercises - 2019 -10 29 
-
   avarageBalance: staff => {
     let initialValue = 0;
     let sum = staff.reduce(function(total, currentValue) {
