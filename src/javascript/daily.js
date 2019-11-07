@@ -4,12 +4,12 @@ const functions = {
   helloWorld: () => {
     return "Hello world from here!";
   },
+  
   //More Array Exercises (Really) - 2019 -11-06
- 
   balanceGreater: (objArr) =>{
    
-    const arrayOfBalance = objArr.map(a => a.balance);
-    const arrLargeNum = arrayOfBalance.filter(balance => balance >= 1000);
+    const arrayOfBalance = objArr.filter(objArr => objArr.balance >= 1000);
+    const arrLargeNum = arrayOfBalance.map(a => a.balance);
     return arrLargeNum;
   },
   // More Array Exercises - 2019 -10 29 

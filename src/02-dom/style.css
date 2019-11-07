@@ -1,16 +1,28 @@
+.basic-dom {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  border: solid;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-size: ;
+}
 
+h1{
 
-html {
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+}
 
-  .basic-dom{
-      width: 500px;
-      height: 800px;
-      background-color: rgb(231, 131, 8);
-  }
+.basic-dom ol{
+  /* list-style-type: none; */
+}
+
+#button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px 0;
+  padding: 30px;
+  background-color: crimson;
+}
+
