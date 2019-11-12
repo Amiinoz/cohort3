@@ -1,14 +1,7 @@
-import workArraysFunctions from './workArrays'
+import workArraysFunctions from "./workArrays.js";
 
-
-test('Working With Arrays', () => {
-  expect(workArraysFunctions.helloWorld()).toBe('H');
+test("Mo test ", () => {
+  expect(workArraysFunctions.helloWorld()).toEqual("Hello world from here!");
 });
-
-test('Working with arrays - Add button', () => {
-  expect(workArraysFunctions.addArray()).toEqual();
-});
-
-
-
-  
+const fakeObjArr = [{ fname: "Rob", lname: "Loban", balance: 2500 }];
+expect(workArraysFunctions.balanceGreater(fakeObjArr)).toEqual([2500]);

@@ -52,47 +52,9 @@ clear.addEventListener("click", () => {
 // My Tax Calculator End-----
 
 // My Working with Arrays start-----
-// const addButton = document.getElementById("add");
-// const addInput = document.getElementById("inp").value;
-// const massIput = document.getElementsById('message').value;
 
-// addButton.addEventListener("click", function() {
-// //   const addButton = document.getElementById("add");
-//   const addInput = document.getElementById("inp").value;
-//   console.log("clicked");
-
-//   let items = [];
-
-//   if (typeof addInput === "number") {
-//     items.push(addInput);
-//     massInput = addInput + " has been added to the array";
-//   } else {
-//     massInput = "the input is not a valid number";
-//   }
-
-
-let button = document.getElementById('add');
-let adinput = document.getElementById('inp');
-// let div = document.getElementById('mss');
-button.addEventListener('click', function(){
-    let p = document.createElement('p');
-    p.appendChild(document.createTextNode("Testing"));
-    // div.appendChild(p);
-    document.getElementById('mss').appendChild('p');
-
-
-    items = [];
-    console.log('heeeeeeeey');
-});
-
-
-
-
-
-
-
-  
-  workArraysFunctions.addArray();
+const add = document.getElementById("add");
+add.addEventListener("click", workArraysFunctions.addItems());
 
 // My Working with Arrays end-----
 

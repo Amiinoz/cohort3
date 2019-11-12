@@ -1,7 +1,11 @@
 import functions from "./script.js";
 
 test("Mo test ", () => {
-    expect(functions.helloWorld()).toEqual("Hello world from here!")
+  expect(functions.helloWorld()).toEqual("Hello world from here!");
 });
-const fakeObjArr = [{ fname: "Rob", lname: "Loban", balance: 2500}];
+const fakeObjArr = [{ fname: "Rob", lname: "Loban", balance: 2500 }];
 expect(functions.balanceGreater(fakeObjArr)).toEqual([2500]);
+
+test("Show Items in li", () => {
+  expect(functions.show()).toEqual(ol.li);
+});
