@@ -1,4 +1,4 @@
-const dictFunctions = {
+const functions = {
   helloWorld: () => {
     return "Hello world from here!";
   },
@@ -8,4 +8,4 @@ const dictFunctions = {
   }
 };
 
-export default dictFunctions;
+export default functions;

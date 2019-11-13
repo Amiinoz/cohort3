@@ -48,50 +48,38 @@ clear.addEventListener("click", () => {
 });
 
 // My Tax Calculator start-----
+click.addEventListener("click", onButtonClicked);
+
+let userInput;
+
+function onButtonClicked() {
+  userInput = parseFloat(input.value);
+  output.textContent = calcTaxFunctions.taxSlabs(userInput).toFixed(2);
+}
 
 // My Tax Calculator End-----
 
 // My Working with Arrays start-----
-//FIXME:
-// add button
-// if the input = number then add to the array
-// if the input is not a number display a massage
-const addButton = document.getElementById("add");
-const arrayInput = document.getElementById("inp").value;
-const arrayShow = document.getElementById("show");
-const arrayToatal = document.getElementById("total");
-const arrayClear = document.getElementById("btn-clear");
-const ol = document.getElementById("arrayList");
+addArr.addEventListener("click", () => {
+  let numInput = inputArr.value;
+  let outputAdd = arrayFunc.adding(numInput);
+  messageFinal.innerText = outputAdd;
+});
 
-addButton.addEventListener("click", newItem);
-let newArr = [];
-function newItem() {
-  // console.log("clicked");
+show.addEventListener("click", () => {
+  let outputShow = arrayFunc.showing(originArr);
+  messageFinal.innerText = outputShow;
+});
 
-  if (typeof arrayInput === "number" && isNaN(arrayInput) !== true) {
-    newArr.push(arrayInput);
-    console.log(newArr);
-  } else {
-    return "now way hose";
-  }
-}
+total.addEventListener("click", () => {
+  let outputTotal = arrayFunc.totalling(originArr);
+  messageFinal.innerText = outputTotal;
+});
 
-//show button
-// will show the contents of the array.
-//  using the “State” concept What is the current “State” of the array
-// Show in a single string
-
-arrayShow.addEventListener("click", () => {});
-
-// Total button
-// will loop in the array and will return the total
-
-arrayToatal.addEventListener("click", () => {});
-
-// Clear button
-// will emty array
-
-arrayClear.addEventListener("clear", () => {});
+clear.addEventListener("click", () => {
+  let outputClear = arrayFunc.clearing(originArr);
+  messageFinal.innerText = outputClear;
+});
 
 // My Working with Arrays end-----
 

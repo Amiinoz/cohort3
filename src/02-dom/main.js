@@ -3,7 +3,7 @@ import functions from "./script.js";
 // idBtnShow.addEventListener("click", () => {
 //   console.log(idol.children);
 // });
-const idBtnShow = document.getElementById('idol');
+const idBtnShow = document.getElementById("idol");
 idBtnShow.addEventListener("click", functions.show());
 
 let count = 1;
@@ -18,13 +18,13 @@ IdBasic.addEventListener("click", () => {
   console.log(event.target);
 });
 
-document.getElementById('idol').addEventListener('click', function(e){
-
+document.getElementById("idol").addEventListener("click", function(e) {
   let itemDel = e.target;
-  if(itemDel.tagName.toUpperCase() == "li"){
+  if (itemDel.tagName.toUpperCase() == "li") {
     itemDel.parentNode.removeChild(itemDel);
   }
-
-
 });
 
+idAddDiv.addEventListener("click", () => {
+  const newCard = functions.create();
+});
