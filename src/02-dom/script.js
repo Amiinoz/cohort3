@@ -38,14 +38,23 @@ const functions = {
 
   addAfterCard: () => {
     let addAffter = event.target.parentNode;
-    console.log("Before");
-    console.log(addAffter);
-    let addAfter = event.target.parentNode;
-    console.log("add after");
+    let newDiv = functions.createCard();
+    left.insertBefore(newDiv, addAffter.nextSibling);
   },
 
   deleteCard: () => {
-    let deleteCard = event.target.parentNode;
+    // let newDiv = functions.createCard();
+    // newDiv.remove();
+    console.log("dlete me");
+    let delCard = event.target.parentNode;
+    let newDiv = functions.createCard();
+    // // list.removeChild(list.childNodes[0]);
+    // // newDiv.removeChild(newDiv.childNodes[0]);
+    // // parent.removeChild(child);
+    // left.removeChild(card_1);
+    // markerDiv.removeChild(myCoolDiv);
+    delCard.removeChild(card_1);
+    // newDiv.removeChild();
   }
 };
 

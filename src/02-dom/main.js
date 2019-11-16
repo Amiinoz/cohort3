@@ -29,7 +29,6 @@ document.getElementById("idol").addEventListener("click", function(e) {
 const addDivButton = document.getElementById("idAddDiv");
 const addBefButton = document.getElementById("idAddBefore");
 const addAffter = document.getElementById("addAffter");
-
 const delCard = document.getElementById("delCard");
 
 addDivButton.addEventListener("click", () => {
@@ -52,4 +51,9 @@ left.addEventListener("click", () => {
   if (event.target.id === "addAffter") {
     functions.addAfterCard();
   }
+});
+
+left.addEventListener("click", () => {
+  if (event.target.id === delCard);
+  functions.deleteCard();
 });
