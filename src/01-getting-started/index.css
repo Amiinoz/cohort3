@@ -69,6 +69,7 @@ html {
 /* Turn off parallax scrolling for tablets and phones */
 
 @media only screen and (max-device-width: 1600px) {
+
     .bgimg-1,
     .bgimg-2,
     .bgimg-3 {
@@ -80,14 +81,15 @@ html {
 /* My calculator */
 .container {
     margin: 0 auto;
-    width:280px;
-    height:462px;
+    width: 280px;
+    height: 462px;
     overflow: hidden;
     border-radius: 30px;
     box-shadow: 5px 3px 5px #2c2a2a;
 }
-.container #input{
-    width:100%;
+
+.container #input {
+    width: 100%;
     padding: 55px 10px;
     border: none;
     outline: none;
@@ -96,55 +98,40 @@ html {
     font-family: 'Noto Serif', serif;
 }
 
-.container .btn-container{
+.container .btn-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.container .btn-container .btns{
+
+.container .btn-container .btns {
     font-size: 14px;
-    padding:28px;
+    padding: 28px;
     border: 1px solid rgb(37, 35, 35);
     background: #141516;
     color: #fff;
     outline: none;
     transition: 500ms border;
-    
+
 }
 
-.container .btn-container .btns:focus{
+.container .btn-container .btns:focus {
     border: 1px solid rgb(78, 77, 77);
 }
 
-#equal{
+#equal {
     font-size: 14px;
-    padding:28px;
+    padding: 28px;
     border: 1px solid rgb(37, 35, 35);
     color: #fff;
     outline: none;
     transition: 500ms border;
 }
 
-#clear{
+#clear {
     font-size: 14px;
-    padding:28px;
+    padding: 28px;
     border: 1px solid rgb(37, 35, 35);
     color: #fff;
     outline: none;
     transition: 500ms border;
 }
-
-/* // arrays */
-.arrays{
-    width:500px;
-    text-align: center;
-    border: 3px solid black;
-    margin:  auto;
-    padding-bottom: 42px;
-}
-
-.massValue li {
-    list-style-type:none;
-};
-
-
-

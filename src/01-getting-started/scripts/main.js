@@ -13,76 +13,83 @@ idNumber.addEventListener("change", () => {
   idNumberSize.textContent = functions.size(idNumber.value);
 });
 
-// My calculator-----
-// slecting Elements
-const btns = document.querySelectorAll(".btns");
-const input = document.getElementById("input");
-const equal = document.getElementById("equal");
-const clear = document.getElementById("clear");
+
+// / ------------------My calculator------------------
+// slecting Elements 
+const btns = document.querySelectorAll('.btns');
+const input = document.getElementById('input');
+const equal = document.getElementById('equal');
+const clear = document.getElementById('clear');
+
 
 // btns
 
-btns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const btnValue = btn.textContent;
-    input.value += btnValue;
-  });
+btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const btnValue = btn.textContent;
+        input.value += btnValue;
+
+    });
 });
 
-//equal the btn event
-equal.addEventListener("click", () => {
-  if (input.value) {
-    let finalValue = eval(input.value);
-    input.value = finalValue;
-  } else {
-    alert("Please input a number");
-    input.value = "";
-  }
-});
-//clear the btn event
-clear.addEventListener("click", () => {
-  let valueLength = input.value.length;
+//equal btn event
+equal.addEventListener('click', () => {
+    if (input.value) {
+        let finalValue = eval(input.value);
+        input.value = finalValue;
+    } else {
+        alert('Please input a number');
+        input.value = '';
 
-  let finalValueOutput = input.value.slice(0, valueLength - 1);
-  input.value = finalValueOutput;
+    }
 });
+//clear btn event
+clear.addEventListener('click', () => {
+    let valueLength = input.value.length;
+
+    let finalValueOutput = input.value.slice(0, valueLength - 1);
+    input.value = finalValueOutput;
+
+}); 
 
 // My Tax Calculator start-----
-click.addEventListener("click", onButtonClicked);
+idCalc.addEventListener("click", () => {
+      functions.canadianTax();
+      const taxFinalResult = functions.canFedTax(idIncome.value);
+      idTax.value = taxFinalResult.toFixed(2);
 
-let userInput;
+      // My Tax Calculator End-----
 
-function onButtonClicked() {
-  userInput = parseFloat(input.value);
-  output.textContent = calcTaxFunctions.taxSlabs(userInput).toFixed(2);
-}
+      // My Working with Arrays start-----
+      addArr.addEventListener("click", () => {
+        let numInput = inputArr.value;
+        let outputAdd = arrayFunc.adding(numInput);
+        messageFinal.innerText = outputAdd;
+      });
 
-// My Tax Calculator End-----
+      show.addEventListener("click", () => {
+        let outputShow = arrayFunc.showing(originArr);
+        messageFinal.innerText = outputShow;
+      });
 
-// My Working with Arrays start-----
-addArr.addEventListener("click", () => {
-  let numInput = inputArr.value;
-  let outputAdd = arrayFunc.adding(numInput);
-  messageFinal.innerText = outputAdd;
-});
+      total.addEventListener("click", () => {
+        let outputTotal = arrayFunc.totalling(originArr);
+        messageFinal.innerText = outputTotal;
+      });
 
-show.addEventListener("click", () => {
-  let outputShow = arrayFunc.showing(originArr);
-  messageFinal.innerText = outputShow;
-});
+      clear.addEventListener("click", () => {
+        let outputClear = arrayFunc.clearing(originArr);
+        messageFinal.innerText = outputClear;
+      });
 
-total.addEventListener("click", () => {
-  let outputTotal = arrayFunc.totalling(originArr);
-  messageFinal.innerText = outputTotal;
-});
+     
 
-clear.addEventListener("click", () => {
-  let outputClear = arrayFunc.clearing(originArr);
-  messageFinal.innerText = outputClear;
-});
+      // My Dict start-----
+      idShowButton.addEventListener("click", () => {
+        console.log("Province Search Button has been Clickitty Clacked");
+        let clickedProvince = functions.findProvinceSearch(idSearchTextBox.value);
+        idMessageArea.textContent = `Province: ${clickedProvince}`;
+        console.log(selectedProvince);
+        idSearchTextBox.value = "";
+    });
 
-// My Working with Arrays end-----
-
-// My Dict start-----
-
-// My Dict end-----

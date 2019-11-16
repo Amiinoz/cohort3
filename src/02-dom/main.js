@@ -3,8 +3,8 @@ import functions from "./script.js";
 // idBtnShow.addEventListener("click", () => {
 //   console.log(idol.children);
 // });
-const idBtnShow = document.getElementById("idol");
-idBtnShow.addEventListener("click", functions.show());
+const idShowButton = document.getElementById("idBtnShow");
+idShowButton.addEventListener("click", functions.show());
 
 let count = 1;
 idBtnAdd.addEventListener("click", () => {
@@ -24,7 +24,32 @@ document.getElementById("idol").addEventListener("click", function(e) {
     itemDel.parentNode.removeChild(itemDel);
   }
 });
+// ------------------- Cards ----------------
 
-idAddDiv.addEventListener("click", () => {
-  const newCard = functions.create();
+const addDivButton = document.getElementById("idAddDiv");
+const addBefButton = document.getElementById("idAddBefore");
+const addAffter = document.getElementById("addAffter");
+
+const delCard = document.getElementById("delCard");
+
+addDivButton.addEventListener("click", () => {
+  let ultimateParEle = document.getElementById("card_1");
+  let newAddedFull = functions.createCard(ultimateParEle);
+  card_1.appendChild(newAddedFull);
+  console.log("AddCARD Clicked");
+  // functions.createCard();
+});
+
+//FIXME:
+
+left.addEventListener("click", () => {
+  if (event.target.id === "idAddBefore") {
+    functions.addBefore();
+  }
+});
+
+left.addEventListener("click", () => {
+  if (event.target.id === "addAffter") {
+    functions.addAfterCard();
+  }
 });

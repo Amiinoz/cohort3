@@ -3,7 +3,7 @@ import functions from "./functions.js";
 // btn.addEventListener("click", () => {
 //   functions.helloWolrd();
 // });
-add.addEventListener('click', function(){
+add.addEventListener("click", function() {
   console.log("click");
   functions.card(bigdiv);
 });
