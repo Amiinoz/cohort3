@@ -4,15 +4,35 @@ const functions = {
   helloWorld: () => {
     return "Hello world from here!";
   },
-  
+
+  // Callback Exercise (Part 1) - 2019 - 11 - 08
+  WesternFourProvinces: () => {
+    //array of full names
+    let staffNames = (data, callback) => {
+      for (let i = 0; i < people.length; i++) {
+        if (
+          data[i].province.toUperCase() === "AB" ||
+          data[i].province.toUperCase() === "BC"
+        ) {
+          if (typeof callback === "function") {
+            callback(data[i]);
+          }
+        }
+      }
+    };
+    people.forEach(function(obj) {
+     if(obj.fname)
+    });
+  },
+  // window.onload = functon(){}
+
   //More Array Exercises (Really) - 2019 -11-06
-  balanceGreater: (objArr) =>{
-   
+  balanceGreater: objArr => {
     const arrayOfBalance = objArr.filter(objArr => objArr.balance >= 1000);
     const arrLargeNum = arrayOfBalance.map(a => a.balance);
     return arrLargeNum;
   },
-  // More Array Exercises - 2019 -10 29 
+  // More Array Exercises - 2019 -10 29
   avarageBalance: staff => {
     let initialValue = 0;
     let sum = staff.reduce(function(total, currentValue) {
@@ -28,7 +48,7 @@ const functions = {
     }, initialValue);
     return sum;
   },
-// loopStaff each / map Exercises - 2019 -10 25
+  // loopStaff each / map Exercises - 2019 -10 25
   loopStaffMap: staff => {
     let empemail = [];
     const newStaffEm = staff.map(item => {
@@ -37,7 +57,7 @@ const functions = {
     });
     return empemail;
   },
-
+  //FIXME:
   loopStaffForEach: staff => {
     let empEmail = [];
     const newStaff = staff.forEach(() => {
@@ -63,7 +83,7 @@ const functions = {
     }
     return email;
   },
-// loopStaff Exercises - 2019 -10 22
+  // loopStaff Exercises - 2019 -10 22
   loopStaff: a => {
     let email = [];
     for (let i = 0; i < a.length; i++) {
@@ -72,7 +92,7 @@ const functions = {
     }
     return email;
   },
-  // More Array Work - 2019-10-16-17 
+  // More Array Work - 2019-10-16-17
   makeSlice: () => {
     var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
     var citrus = fruits.slice(1, 3);
@@ -171,7 +191,7 @@ const functions = {
       obj.fname.toLowerCase() + "." + obj.lname.toLowerCase() + "@evolveu.ca"
     );
   },
-// makeEmailObj - 2019 -10 11
+  // makeEmailObj - 2019 -10 11
   makeEmailArr: arr => {
     return arr[0].toLowerCase() + "." + arr[1].toLowerCase() + "@evolveu.ca";
     let button = document.getElementById("btn");

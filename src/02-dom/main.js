@@ -24,6 +24,7 @@ document.getElementById("idol").addEventListener("click", function(e) {
     itemDel.parentNode.removeChild(itemDel);
   }
 });
+
 // ------------------- Cards ----------------
 
 const addDivButton = document.getElementById("idAddDiv");
@@ -39,8 +40,6 @@ addDivButton.addEventListener("click", () => {
   // functions.createCard();
 });
 
-//FIXME:
-
 left.addEventListener("click", () => {
   if (event.target.id === "idAddBefore") {
     functions.addBefore();
@@ -52,7 +51,7 @@ left.addEventListener("click", () => {
     functions.addAfterCard();
   }
 });
-
+//FIXME:
 left.addEventListener("click", () => {
   if (event.target.id === delCard);
   functions.deleteCard();

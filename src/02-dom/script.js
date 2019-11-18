@@ -26,8 +26,6 @@ const functions = {
     return newDiv;
   },
 
-  //FIXME:
-
   addBefore: () => {
     let addBefButton = event.target.parentNode;
     console.log(addBefButton);
@@ -42,17 +40,11 @@ const functions = {
     left.insertBefore(newDiv, addAffter.nextSibling);
   },
 
+  //FIXME:
   deleteCard: () => {
-    // let newDiv = functions.createCard();
-    // newDiv.remove();
     console.log("dlete me");
     let delCard = event.target.parentNode;
     let newDiv = functions.createCard();
-    // // list.removeChild(list.childNodes[0]);
-    // // newDiv.removeChild(newDiv.childNodes[0]);
-    // // parent.removeChild(child);
-    // left.removeChild(card_1);
-    // markerDiv.removeChild(myCoolDiv);
     delCard.removeChild(card_1);
     // newDiv.removeChild();
   }
