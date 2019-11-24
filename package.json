@@ -19,6 +19,7 @@
         "jest": "^24.9.0"
     },
     "dependencies": {
+        "js-beautify": "^1.10.2",
         "node-command-line": "^1.0.2"
     }
 }
