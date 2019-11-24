@@ -1,58 +1,36 @@
-import functions from "./script.js";
+import functions from "./functions.js";
 
-// idBtnShow.addEventListener("click", () => {
-//   console.log(idol.children);
-// });
+// -------Basic DOM
 const idShowButton = document.getElementById("idBtnShow");
-idShowButton.addEventListener("click", functions.show());
+idShowButton.addEventListener("click", functions.btnShow);
+idBtnAdd.addEventListener("click", functions.btnAdd);
+IdBasic.addEventListener("click", functions.divIdBasic);
 
-let count = 1;
-idBtnAdd.addEventListener("click", () => {
-  console.log("add Clicked");
-  let newItem = document.createElement("li");
-  idol.appendChild(newItem);
-  newItem.textContent = `Item Number ${count++}`;
-});
+// -------Cards
+const addAfter = document.getElementsByTagName("button")
+const addBefore = document.getElementsByTagName("button");
+const deletButton = document.getElementsByTagName("button");
+const idAddingCards = document.getElementById("idAddDiv");
 
-IdBasic.addEventListener("click", () => {
-  console.log(event.target);
-});
-
-document.getElementById("idol").addEventListener("click", function(e) {
-  let itemDel = e.target;
-  if (itemDel.tagName.toUpperCase() == "li") {
-    itemDel.parentNode.removeChild(itemDel);
-  }
-});
-
-// ------------------- Cards ----------------
-
-const addDivButton = document.getElementById("idAddDiv");
-const addBefButton = document.getElementById("idAddBefore");
-const addAffter = document.getElementById("addAffter");
-const delCard = document.getElementById("delCard");
-
-addDivButton.addEventListener("click", () => {
-  let ultimateParEle = document.getElementById("card_1");
-  let newAddedFull = functions.createCard(ultimateParEle);
-  card_1.appendChild(newAddedFull);
-  console.log("AddCARD Clicked");
-  // functions.createCard();
-});
-
+const left = document.getElementById("left");
 left.addEventListener("click", () => {
-  if (event.target.id === "idAddBefore") {
-    functions.addBefore();
-  }
-});
+  if (event.target.id === "idAddDiv") {
+    console.log("I am Add Button");
+    functions.createCards(left);
 
-left.addEventListener("click", () => {
-  if (event.target.id === "addAffter") {
-    functions.addAfterCard();
   }
-});
-//FIXME:
-left.addEventListener("click", () => {
-  if (event.target.id === delCard);
-  functions.deleteCard();
+  if (event.target.id === "added") {
+
+    functions.addAfterCard(left);
+  }
+  if (event.target.id === "bef") {
+
+    functions.addBeforeCard(left);
+
+  }
+  if (event.target.id === "delBtn") {
+    // console.log(event);
+    functions.deleteCard(left);
+  }
+
 });

@@ -9,6 +9,8 @@ const functions = {
   show: e => {
     console.log(idol.children);
   },
+
+
   count: 0,
 
   createCard: () => {
@@ -38,16 +40,24 @@ const functions = {
     let addAffter = event.target.parentNode;
     let newDiv = functions.createCard();
     left.insertBefore(newDiv, addAffter.nextSibling);
-  },
+  }
+
 
   //FIXME:
-  deleteCard: () => {
-    console.log("dlete me");
-    let delCard = event.target.parentNode;
-    let newDiv = functions.createCard();
-    delCard.removeChild(card_1);
-    // newDiv.removeChild();
-  }
+  // deleteCard: () => {
+  //   console.log("dlete me");
+  //   let delCard = event.target.parentNode;
+  //   let newDiv = functions.createCard();
+  //   // delCard.removeChild(card_1);
+  //   newDiv.removeChild(newDiv);
+  // }
+  // ----------------
+
+  // deletCard: () => {
+  //   console.log("Please Delete Me");
+  //   let dCard = event.target.nextSibling;
+  //   dCard.remove(dCard);
+  // }
 };
 
 export default functions;
