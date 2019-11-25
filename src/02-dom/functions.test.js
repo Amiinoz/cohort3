@@ -24,6 +24,8 @@ test("Basic dom divBasic", () => {
 test("Creating Cards in the Dom", () => {
     functions.count = 0;
 
+
+    createDiv
     // Create a div and set up test
     const left = document.createElement("div");
     let cardCount = left.childElementCount;
@@ -38,25 +40,25 @@ test("Creating Cards in the Dom", () => {
     expect(left.childElementCount).toEqual(cardCount + 1);
     expect(left.lastChild.textContent).toEqual("Card 1" + "Add After" + "Add Before" + "Delet");
 
-    // Add After test
-    // functions.addAfterCard(panel, panel.lastChild);
-    // expect((panel.firstChild.childNodes[0]).textContent).toEqual("Card 1");
+    Add After test
+    functions.addAfterCard(panel, panel.lastChild);
+    expect((panel.firstChild.childNodes[0]).textContent).toEqual("Card 1");
 
 
-    // expect(cardDivs.lastChild.childNodes[0].textContent).toEqual("Card 1");
-    // expect(cardDivs.childElementCount).toEqual(1);
+    expect(cardDivs.lastChild.childNodes[0].textContent).toEqual("Card 1");
+    expect(cardDivs.childElementCount).toEqual(1);
 
-    // expect(cardDivs.lastChild.childNodes[1].textContent).toEqual("Card 2");
-    // expect(cardDivs.childElementCount).toEqual(2);
+    expect(cardDivs.lastChild.childNodes[1].textContent).toEqual("Card 2");
+    expect(cardDivs.childElementCount).toEqual(2);
 
-    // expect(cardDivs.lastChild.childNodes[1].textContent).toEqual("Card 2")
-
-
+    expect(cardDivs.lastChild.childNodes[1].textContent).toEqual("Card 2")
 
 
-    // expect(cardDivs.childElementCount).toEqual(1);
 
-    // expect(cardDivs.lastChild.childNodes[1].textContent).toEqual("Card 2")
-    // expect(cardDivs.childElementCount).toEqual(2);
+
+    expect(cardDivs.childElementCount).toEqual(1);
+
+    expect(cardDivs.lastChild.childNodes[1].textContent).toEqual("Card 2")
+    expect(cardDivs.childElementCount).toEqual(2);
 
 });
