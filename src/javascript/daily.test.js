@@ -77,9 +77,9 @@ test("Mo test ", () => {
   expect(functions.helloWorld()).toEqual("Hello world from here!");
 });
 
-// test("Return full names from AB and BC", () => {
-//   expect(functions.WesternFourProvinces()).toEqual("Billy Bob");
-// });
+test("Return full names from AB and BC", () => {
+  expect(functions.WesternFourProvinces()).toEqual("Billy Bob");
+});
 test("Return array with balance greather then 1000", () => {
   const fakeObjArr = [{ fname: "Rob", lname: "Loban", balance: 2500 }];
   // tdd test --> end
