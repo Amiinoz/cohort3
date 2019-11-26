@@ -76,7 +76,7 @@ const functions = {
         console.log("Add After Button");
         let addAffter = event.target.parentNode;
         let newDiv = functions.createCards();
-        left.insertBefore(newDiv, addAffter.nextSibling);
+        left.insertBefore(newDiv,addAffter.nextSibling);
     },
     addBeforeCard: () => {
         console.log("Add before Button");
@@ -88,6 +88,7 @@ const functions = {
         console.log("Delete Button")
         left.removeChild(event.target.parentNode);
     },
+
 
 
 
