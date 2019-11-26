@@ -13,13 +13,13 @@ const fakeObjArr = [
 expect(functions.balanceGreater(fakeObjArr)).toEqual([2500]);
 
 test("Accounts, Constructor, Deposit and Balance", () => {
-  const Savings = new Account("SavingsAcount", 100);
+  const checkingAccount = new Account("checkingAccount", 25);
   // check state
-  expect(Savings.checkBalance()).toEqual(100);
-  // withdrawl test
-  Savings.withdraw(50);
-  expect(Savings.checkBalance()).toEqual(50);
+  expect(checkingAccount.checkBalance()).toEqual(25);
   // deposit test
-  Savings.deposit(45);
-  expect(Savings.checkBalance()).toEqual(95);
+  checkingAccount.deposit(10);
+  expect(checkingAccount.checkBalance()).toEqual(35);
+  // withdrawl test
+  checkingAccount.withdraw(30);
+  expect(checkingAccount.checkBalance()).toEqual(5);
 });
