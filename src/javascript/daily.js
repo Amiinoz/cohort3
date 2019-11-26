@@ -5,25 +5,55 @@ const functions = {
     return "Hello world from here!";
   },
 
-  // Callback Exercise (Part 1) - 2019 - 11 - 08
-  WesternFourProvinces: () => {
-    //array of full names
-    let staffNames = (data, callback) => {
-      for (let i = 0; i < people.length; i++) {
-        if (
-          data[i].province.toUperCase() === "AB" ||
-          data[i].province.toUperCase() === "BC"
-        ) {
-          if (typeof callback === "function") {
-            callback(data[i]);
-          }
-        }
-      }
-    };
-    people.forEach(function(obj) {
-     if(obj.fname)
-    });
+  // Destructuring-assignment - November 26, 2019
+
+  arrayDestructuring: () => {
+    // we have an array with the name and surname
+    let carMaker = ["Honda", "Civic"];
+    // destructuring assignment
+    // sets carModel = arr[0]
+    // and carName = arr[1]
+    let [carModel, carName] = carMaker;
+    return carModel + " " + carName;
+
+    // alert(carModel); // Honda
+    // alert(carName); // Civic
   },
+
+  objectDestructuring: () => {
+    let basketballPlayer = {
+      name: "Mike Logic",
+      position: "Point Guard",
+      height: 511
+    };
+
+    let { name, position, height } = basketballPlayer;
+
+    return name;
+    // alert(name); // Mike Logic
+    // alert(position); // Point guard
+    // alert(height); // 511
+  },
+
+  // Callback Exercise (Part 1) - 2019 - 11 - 08
+  // WesternFourProvinces: () => {
+  //   //array of full names
+  //   let staffNames = (data, callback) => {
+  //     for (let i = 0; i < people.length; i++) {
+  //       if (
+  //         data[i].province.toUperCase() === "AB" ||
+  //         data[i].province.toUperCase() === "BC"
+  //       ) {
+  //         if (typeof callback === "function") {
+  //           callback(data[i]);
+  //         }
+  //       }
+  //     }
+  //   };
+  // people.forEach(function(obj) {
+  //  if(obj.fname)
+  // };
+  // },
   // window.onload = functon(){}
 
   //More Array Exercises (Really) - 2019 -11-06

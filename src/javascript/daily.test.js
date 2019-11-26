@@ -1,5 +1,14 @@
 import functions from "./daily.js";
 
+// Destructuring-assignment - November 26, 2019
+test("test for obect destructing ", () => {
+  expect(functions.arrayDestructuring()).toEqual("Honda Civic");
+});
+
+test("test for obect destructing ", () => {
+  expect(functions.objectDestructuring()).toEqual("Mike Logic");
+});
+
 // Callback Exercise (Part 1) - 2019 - 11 - 08
 const people = [
   { fname: "Alex", lname: "Smith", province: "BC", age: 33 },
@@ -68,9 +77,9 @@ test("Mo test ", () => {
   expect(functions.helloWorld()).toEqual("Hello world from here!");
 });
 
-test("Return full names from AB and BC", () => {
-  expect(functions.WesternFourProvinces()).toEqual("Billy Bob");
-});
+// test("Return full names from AB and BC", () => {
+//   expect(functions.WesternFourProvinces()).toEqual("Billy Bob");
+// });
 test("Return array with balance greather then 1000", () => {
   const fakeObjArr = [{ fname: "Rob", lname: "Loban", balance: 2500 }];
   // tdd test --> end

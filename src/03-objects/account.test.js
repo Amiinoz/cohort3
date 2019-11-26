@@ -1,15 +1,18 @@
-import { functions, account, accountController, Account } from "./account.js";
+import {
+  functions,
+  account,
+  accountController,
+  Account
+} from "./account.js";
 
 test("Mo test ", () => {
   expect(functions.helloWorld()).toEqual("Hello world from here!");
 });
-const fakeObjArr = [
-  {
-    fname: "Rob",
-    lname: "Loban",
-    balance: 2500
-  }
-];
+const fakeObjArr = [{
+  fname: "Rob",
+  lname: "Loban",
+  balance: 2500
+}];
 expect(functions.balanceGreater(fakeObjArr)).toEqual([2500]);
 
 test("Accounts, Constructor, Deposit and Balance", () => {
