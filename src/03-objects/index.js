@@ -1,1 +1,4 @@
-import { account, accountController } from "./account.js";
+import {
+    account,
+    accountController
+} from "./account.js";

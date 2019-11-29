@@ -10,78 +10,97 @@
 </head>
 
 <body>
-    <h1>Hello world from here</h1>
 
 
-    <section class="grid-test">
-        <div class="row">
-            <div class="container">
-                <div class="col-1-of-2">
-                    Col 1 of 2
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,
+                    initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <title>Accounts</title>
+
+    </head>
+
+    <body>
+
+        <body>
+            <!-- Accounts title -->
+
+            <div id="IdBasic" class="basic-dom">
+                <h1>Bank Account</h1>
+            </div>
+            </br>
+
+
+            <!-- Account info -->
+            <div class="wokingCards">
+                <div id="left" class="panel-left">
+                    <div class="form-style-5">
+                        <form>
+                            <fieldset>
+                                <legend><span class="number">1</span>
+                                    Your Name</legend>
+                                <input type="text" name="field1" placeholder="Your Name">
+
+
+                                <legend><span class="number">2</span>Account
+                                    Type</legend>
+                                <select id="job" name="field4">
+                                    <optgroup label="Account">
+                                        <option value="Savings">Savings</option>
+                                        <option value="Checking">Checking</option>
+                                        <option value="RumFund">RumFund</option>
+                                    </optgroup>
+                                </select>
+                            </fieldset>
+                            <fieldset>
+                                <legend><span class="number">3</span>
+                                    Starting Balance</legend>
+                                <input type="number" name="field1" placeholder="Balance">
+                            </fieldset>
+                            <input type="submit" value="Enter" />
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="col-1-of-2">
-                Col 1 of 2
-            </div>
-        </div>
 
-        <div class="col">
-            <div class="col-1-of-3">
-                Col 1 of 3
-            </div>
-            <div class="col-1-of-3">
-                Col 1 of 3
-            </div>
-            <div class="col-1-of-3">
-                Col 1 of 3
-            </div>
-        </div>
+            <div class="panel-right">
+                <div class="rightSide-1">
 
-        <div class="row">
-            <div class="col-1-of-3">
-                Col 1 of 3
-            </div>
-            <div class="col-2-of-3">
-                Col 2 of 3
-            </div>
-        </div>
+                    <div class="form-style-6">
+                        <h1>Accou Summary</h1>
+                        <form>
+                            <label class="sr-only" for="inlineFormInputGroupMD">Username</label>
+                            <div class="md-form input-group mb-3">
+                                <input type="text" value="Savings" readonly>
+                                <input type="text" name="field1" placeholder="Your Name" />
+                                <input type="email" name="field2" placeholder="Email Address" />
+                                <textarea name="field3" placeholder="Type
+                                        your Message"></textarea>
+                                <input type="submit" value="Total" />
+                                <div class="col-auto">
+                                    <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">@</div>
+                                        </div>
+                                        <input type="text" class="form-control" id="inlineFormInputGroup"
+                                            placeholder="Username">
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
 
-        <div class="row">
-            <div class="col-1-of-4">
-                Col 1 of 4
+                </div>
             </div>
-            <div class="col-1-of-4">
-                Col 1 of 4
             </div>
-            <div class="col-1-of-4">
-                Col 1 of 4
-            </div>
-            <div class="col-1-of-4">
-                Col 1 of 4
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-1-of-4">
-                Col 1 of 4
-            </div>
-            <div class="col-1-of-4">
-                Col 1 of 4
-            </div>
-            <div class="col-2-of-4">
-                Col 2 of 4
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-1-of-4">
-                Col 1 of 4
-            </div>
-            <div class="col-3-of-4">
-                Col 3 of 4
-            </div>
-        </div>
-    </section>
+    </html>
 
 
 
