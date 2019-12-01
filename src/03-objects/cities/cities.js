@@ -29,7 +29,7 @@ class City {
     }
     howBig() {
 
-        if (this.population > 100000) return "City";
+        if (this.population > 100000) return "Big City";
         else if (this.population > 20000) return "Large town";
         else if (this.population > 1000) return "Town";
         else if (this.population > 100) return "Village";
@@ -40,9 +40,25 @@ class City {
 }
 
 class CityControler {
-    constructor() {
+    constructor(cityName) {
         this.cities = [];
         this.massage = "";
+        this.counter = 0;
+    }
+    createNewCity(province, name, latitude, longtitude, population) {
+        this.cities.push(new City(province, latitude, longtitude, population, this.counter));
+        this.counter++;
+    }
+    removeCity(deleteCity) {
+        this.cities = this.cities.filter((e) => e.name != deleteCity);
+    }
+
+    cityPopulation() {
+        const cityArray = [];
+        this.cities.forEach(e => {
+            cityArray.push(e.population);
+            return cityArray;
+        });
     }
 }
 
