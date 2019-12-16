@@ -71,3 +71,8 @@ test('cityPopulation - test', () => {
     expect(province.cities.lenght).toEqual(10);
     expect(peovince.cities[i], name).toEqual("Shamattawa")
 });
+test('controler test', () => {
+    let contTest = new CityControler();
+    contTest.createNewCity("Steve", 50, 20, 10);
+    console.log(conTest);
+});

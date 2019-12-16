@@ -21,7 +21,7 @@ left.addEventListener("click", () => {
   }
   if (event.target.id === "added") {
 
-    functions.addAfterCard(left);
+    functions.addAfterCard(right);
   }
   if (event.target.id === "bef") {
 

@@ -80,3 +80,6 @@ test('Getting the first name', () => {
 test('Getting the all the first name', () => {
     expect(functions.getAllFirstNames(data)).toEqual(["Maricica", "Nishant", "Nicuță", "Barbara", "Stanca", "Bella", "Fabian", "Славчо", "Upendra", "Dumitra"])
 });
+test('Show deley problem test', () => {
+    expect(functions.showDelayProblem(data)).toEqual('Three');
+});

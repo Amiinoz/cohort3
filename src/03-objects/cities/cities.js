@@ -1,10 +1,27 @@
+const count = 0;
 const functions = {
+
     helloWorld: () => {
         return ("Hello world from here!");
     },
     balanceGreater: (fakeObjArr) => {
         return [2500];
+
+
+    },
+    // psude
+    // create a card
+    // city info title
+    //  display city name latitude Long nad pop
+    newCity: () => {
+        functions.count++;
+        let newOl = document.createElement("li");
+        newOl.setAttribute("class", "cityInfo");
+        newOl.textContent = ` Card {}`
+
+        left.appendChild(newOl);
     }
+
 };
 class City {
     constructor(province, name, latitude, longitude, population) {
@@ -36,8 +53,8 @@ class City {
         else return "Hamlet";
 
     }
-
 }
+
 
 class CityControler {
     constructor(cityName) {
