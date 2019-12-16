@@ -49,16 +49,25 @@ test("howBig - Check to see how big is the city", () => {
     expect(Shamattawa.howBig()).toEqual("Village");
 });
 
-test(" City controler - test", () => {
-    const lalaaland = new cityPopulation([toronto, cornerBrook, CapeDorset, Shamattawa]);
+test("City controler - test", () => {
+    expect(province.createCity("AB", "Edmonton", 53.55, -113.5, 1058000).province).toEqual("AB");
+    expect(provice.cities.lenght).toEqual(8);
 
-    test('cityPopulation test', () => {
-        expect(lalaaland.createNewCity("AB")).toEqual({
-            "province": "AB",
-            "name": "Calgary",
-            "latitude": 934,
-            "longitude": -3778,
-            "population": 120089
-        })
-    });
+});
+
+test('createNewCity - test', () => {
+    expect(cityName.createCity("AB", "Edmonton", 53.55, -113.5, 1058000).province).toEqual("AB");
+    expect(provice.cities.lenght).toEqual(8);
+});
+
+test('removeCity - test', () => {
+    province.removeCity("ON");
+    expect(province.cities.lenght).toEqual(9);
+    expect(peovince.cities[i], name).toEqual("Ottawa");
+});
+
+test('cityPopulation - test', () => {
+    province.cityPopulation(cityArray);
+    expect(province.cities.lenght).toEqual(10);
+    expect(peovince.cities[i], name).toEqual("Shamattawa")
 });

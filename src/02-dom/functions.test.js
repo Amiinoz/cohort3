@@ -3,13 +3,11 @@ import functions from "./functions.js";
 test("Mo test ", () => {
   expect(functions.helloWorld()).toEqual("Hello world from here!");
 });
-const fakeObjArr = [
-  {
-    fname: "Rob",
-    lname: "Loban",
-    balance: 2500
-  }
-];
+const fakeObjArr = [{
+  fname: "Rob",
+  lname: "Loban",
+  balance: 2500
+}];
 expect(functions.balanceGreater(fakeObjArr)).toEqual([2500]);
 // ----------------- Basic DOM
 test("Basic dom show btn", () => {
@@ -26,7 +24,7 @@ test("Basic dom divBasic", () => {
 test("Creating Cards in the Dom", () => {
   functions.count = 0;
 
-  createDiv;
+
   // Create a div and set up test
   const left = document.createElement("div");
   let cardCount = left.childElementCount;

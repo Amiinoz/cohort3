@@ -7,16 +7,12 @@ const functions = {
         return [2500];
     },
     // ----- initial test
-
-    getFirstName: (data) => {
-        const name = [];
-        const newName = data.forEach(name => {
-            return (name[0]);
-        });
-
-    }
-
-
+    getFirstName(data) {
+        return (data[0].name);
+    },
+    getAllFirstNames(data) {
+        return data.map((d, i, x) => d.name);
+    },
 }
 
 

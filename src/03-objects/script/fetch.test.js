@@ -74,6 +74,9 @@ const fakeObjArr = [{
 }];
 expect(functions.balanceGreater(fakeObjArr)).toEqual([2500]);
 // ----- initial test
-test('Getting the first names', () => {
-    expect(functions.getFirstName()).toEqual("Maricica");
+test('Getting the first name', () => {
+    expect(functions.getFirstName(data)).toEqual("Maricica");
+});
+test('Getting the all the first name', () => {
+    expect(functions.getAllFirstNames(data)).toEqual(["Maricica", "Nishant", "Nicuță", "Barbara", "Stanca", "Bella", "Fabian", "Славчо", "Upendra", "Dumitra"])
 });

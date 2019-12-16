@@ -59,7 +59,27 @@ class CityControler {
             cityArray.push(e.population);
             return cityArray;
         });
+        const totalCityPopulation = cityArray.reduce((acctual, current) => acctual + current);
+        return totalCityPopulation;
     }
+
+    wichSphere() {
+        // Southern Hamisphere
+        // Northern Hamisphere
+
+    }
+
+    getMosNorthem() {
+
+
+    }
+
+    getMostSouthern() {
+
+    }
+
+
+
 }
 
 
