@@ -1,11 +1,12 @@
 import React from "react";
 
-function EvenComponent() {
-  return (
-    <div>
-      <h1>I am Odd Component</h1>
-    </div>
-  );
+function OddComponent(props) {
+  if (this.counter === (Number % 2 === 0))
+    return (
+      <div>
+        <h1>I am Odd Component</h1>
+      </div>
+    );
 }
 
-export default EvenComponent;
+export default OddComponent;
