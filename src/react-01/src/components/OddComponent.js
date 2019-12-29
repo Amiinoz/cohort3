@@ -1,12 +1,15 @@
 import React from "react";
 
-function OddComponent(props) {
-  if (this.counter === (Number % 2 === 0))
-    return (
-      <div>
-        <h1>I am Odd Component</h1>
-      </div>
-    );
+class OddComponent extends React.Component {
+  render() {
+    if (this.props.counter % 2 !== 0)
+      return (
+        <div>
+          <h3>I am Odd Component</h3>
+        </div>
+      );
+    else return null;
+  }
 }
 
 export default OddComponent;

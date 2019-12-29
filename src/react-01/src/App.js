@@ -8,38 +8,52 @@ import OddComponent from "./components/OddComponent";
 class App extends React.Component {
   constructor() {
     super();
-    this.counter = 22 + 1;
-    this.state = {
-      myState: "TBD",
-      whatToSay: "What Ever"
-    };
-   
-  }
 
-  isEvenOrOdd = () =>{
-    
+    this.state = {
+      counter: 21,
+      myState: "TBD"
+    };
+    this.onPushMe = this.onPushMe.bind(this);
   }
- 
   onPushMe = () => {
-    console.log("You pushed me");
-    this.setState({
-      myState: "now:" + this.counter
+    console.log("I got Pushed");
+    this.setState(prevState => {
+      return {
+        counter: prevState.counter + 1
+      };
     });
   };
+
+  disOddOrEven() {
+    if (this.state.counter % 2 === 0)
+      return (
+        <div>
+          <h3>I am Even Component</h3>
+        </div>
+      );
+    else {
+      return (
+        <div>
+          <h3>I am Even Component</h3>
+        </div>
+      );
+    }
+  }
 
   render() {
     return (
       <div className='App'>
         <header className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
-
           <h1>
-            I am in control of this application and my name is Mohamed
-            {this.counter}
+            I am in control of this application and my name is Mohamed{" "}
+            {this.state.counter}
             {this.state.myState}
           </h1>
-          <button onClick={this.onPushMe}>Push Me</button>
-
+          <button onClick={this.onPushMe}>
+            {this.state.disOddOrEven}
+            Push Me
+          </button>
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -51,10 +65,10 @@ class App extends React.Component {
           >
             Learn React
           </a>
+          <MyComponent />
+          <EvenComponent />
+          <OddComponent />
         </header>
-        <MyComponent />
-        <EvenComponent />
-        <OddComponent />
       </div>
     );
   }
