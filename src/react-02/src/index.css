@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* ------------------- */
+
+.classRecApp ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  text-decoration: none;
+  display: inline-block;
+
+
+}
+
+.linklist {
+  fill: red;
+}
+
+
+
+
+
+ul li img {
+  width: 200px;
+  height: 120px;
+  padding: 10px;
+
+}
+img svg{
+  color:red
+}
+
+#card_r img {
+  background-color: red;
+}
+
+svg {
+  color: red;
+}

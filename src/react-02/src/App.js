@@ -1,56 +1,100 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
 
-import logo from "./logo.svg";
-import "./App.css";
-import * as SVGLoaders from "svg-loaders-react";
-import { render } from "@testing-library/react";
+import Game from "./components/game/Game";
+import Accounts from "./components/accounts/Accounts";
+import Cities from "./components/cities/Cities";
+import LinkList from "./components/linklist/LinkList";
 
-import TicTacToe from "./components/TicTacToe";
-import Accounts from "./components/Accounts";
-import Cities from "./components/Cities";
-const { BrowserRouter, NavLink, Route } = ReactRouterDOM;
+import HomeIcon from "./images/home.svg";
+import TicTacIcon from "./images/game.svg";
+import AccIcon from "./images/bank.svg";
+import CityIcon from "./images/city.svg";
+import LinkListIcon from "./images/linklist.svg";
+// import Square from "./components/Square";
+// import Board from "./components/Board";
+// import Game from "./components/Game";
 
-class App extends React.Component {
+// This site has 3 pages, all of which are rendered
+// dynamically in the browser (not server rendered).
+//
+// Although the page does not ever refresh, notice how
+// React Router keeps the URL up to date as you navigate
+// through the site. This preserves the browser history,
+// making sure things like the back button and bookmarks
+// work properly.
+
+class ReactApp extends React.Component {
   render() {
     return (
-      <div className='App'>
-        <ul>
-          <li>
-            <SVGLoaders.Bars />
-            <a href='/TicTacToe'>TicTacToe</a>
-          </li>
-          <li>
-            <SVGLoaders.Puff />
-          </li>
-          <li>
-            <SVGLoaders.Grid />
-          </li>
-          <li>
-            <SVGLoaders.TailSpin />
-          </li>
-        </ul>
+      <Router>
+        <div className='classRecApp'>
+          <ul>
+            <li>
+              <Link to='/'>
+                <img src={HomeIcon} className='home-logo' alt='Home Page' />
+              </Link>
 
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Learn React
-          </a>
-        </header>
-        <Accounts />
-        <Cities />
-        <TicTacToe />
-        <BrowserRouter>{/* <Dashboard /> */}</BrowserRouter>
-      </div>
+              <icon fill='red' className='logo' width={50} height={50} />
+            </li>
+            <li>
+              <Link to='/Game'>
+                <img src={TicTacIcon} className='game-logo' alt='Tic Tac Toe' />
+              </Link>
+            </li>
+            <li>
+              <Link to='/Accounts'>
+                <img src={AccIcon} alt='Accounts' />
+              </Link>
+            </li>
+            <li>
+              <Link to='/Cities'>
+                {" "}
+                <img src={CityIcon} alt='Cities' />
+              </Link>
+            </li>
+            <li>
+              <Link to='/LinkList'>
+                {" "}
+                <img src={LinkListIcon} alt='Link List' />
+              </Link>
+            </li>
+          </ul>
+
+          <hr />
+
+          {/*
+            A <Switch> looks through all its children <Route>
+            elements and renders the first one whose path
+            matches the current URL. Use a <Switch> any time
+            you have multiple routes, but you want only one
+            of them to render at a time
+          */}
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route path='/Game'>
+              <Game />
+            </Route>
+            <Route path='/Accounts'>
+              <Accounts />
+            </Route>
+            <Route path='/Cities'>
+              <Cities />
+            </Route>
+            <Route path='/LinkList'>
+              <LinkList />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
 
-export default App;
+// You can think of these components as "pages"
+// in your app.
+
+export default ReactApp;

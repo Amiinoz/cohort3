@@ -2,9 +2,8 @@ import React from "react";
 
 function Accounts() {
   return (
-    <div>
-      <h1>Accounts</h1>
-      <p>Accounts content</p>
+    <div className='classAcc'>
+      <h2>Accounts</h2>
     </div>
   );
 }
