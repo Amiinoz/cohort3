@@ -39,8 +39,9 @@ ul li img {
   padding: 10px;
 
 }
-img svg{
-  color:red
+
+img svg {
+  color: red
 }
 
 #card_r img {
@@ -50,3 +51,55 @@ img svg{
 svg {
   color: red;
 }
+
+
+.classAcc {
+  grid-column: 1;
+  width: 50%;
+  float: left;
+  background-color: rgb(253, 253, 253);
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 0 0 20px;
+  overflow: hidden;
+  border: 1px solid rgb(31, 30, 30);
+}
+
+.classAccountCard input {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  background: #6965A4;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* 
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+} */
