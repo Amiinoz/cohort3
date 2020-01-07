@@ -67,9 +67,9 @@ ul {
 }
 
 .game-board button {
-    background-color: red;
-    border-radius: 2px;
-    color: white;
+    background-color: rgb(227, 223, 223);
+    border-radius: solid black 2px;
+    color: rgb(55, 52, 52);
     font-size: 34px;
     border-radius: 15px;
 

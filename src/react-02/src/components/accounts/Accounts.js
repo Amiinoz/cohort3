@@ -1,57 +1,65 @@
-import React from "react";
-
-class Accounts extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      accountName: " ",
-      accountType: " ",
-      startBalance: " "
-    };
-    this.onHandleChange = this.onHandleChange.bind(this);
+const functions = {
+  helloWorld: () => {
+    return "Hello world from here!";
+  },
+  balanceGreater: fakeObjArr => {
+    return [2500];
   }
-  onHandleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  }
-  render() {
-    return (
-      <div className='classAcc'>
-        <h2>Accounts</h2>
+};
 
-        <div className='classAccountCard'>
-          <h3>Account Info</h3>
-          <form>
-            <input
-              type='text'
-              name='accountName'
-              placeholder='accountName'
-              onChange={this.onHandleChange}
-            />
-            <h4>{this.state.accountName}</h4>
-            <input
-              type='text'
-              name='accountType'
-              placeholder='accountType'
-              onChange={this.onHandleChange}
-            />
-            <h4>{this.state.accountType}</h4>
-            <input
-              type='number'
-              name='startBalance'
-              placeholder='startBalance'
-              onChange={this.onHandleChange}
-            />
-            <h4>{this.state.startBalance}</h4>
-            <button type='button' className='btn'>
-              Enter
-            </button>
-          </form>
-        </div>
-      </div>
-    );
+class Account {
+  constructor(actName, strBalance) {
+    this.actName = actName;
+    this.balance = strBalance;
+  }
+
+  deposit(amount) {
+    this.balance += amount;
+  }
+
+  withdraw(amount) {
+    this.balance -= amount;
+  }
+
+  checkBalance() {
+    return this.balance;
   }
 }
 
-export default Accounts;
+class ActControler {
+  constructor() {
+    this.allAccounts = [];
+    this.massage = "Your account Balance ";
+  }
+
+  addAct(actName, strBalance) {
+    const newAct = new Account(actName, strBalance);
+    this.allAccounts.push(newAct);
+  }
+
+  removeAct(pointer) {
+    this.allAccounts.splice(pointer, 1);
+  }
+
+  totalBal() {
+    let actSum = 0;
+    for (const eachAccount of this.allAccounts) {
+      actSum += eachAccount.balance;
+    }
+    return actSum;
+  }
+
+  highsVal() {
+    const balanceArr = this.allAccounts.map(each => each.balance);
+    const highVal = Math.max(...balanceArr);
+    return highVal;
+  }
+
+  lowsVal() {
+    const balanceArr = this.allAccounts.map(each => each.balance);
+    const lowVal = Math.min(...balanceArr);
+    return lowVal;
+  }
+}
+
+export { functions, Account, ActControler };

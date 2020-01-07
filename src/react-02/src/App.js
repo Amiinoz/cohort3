@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 
 import Game from "./components/game/Game";
-import Accounts from "./components/accounts/Accounts";
+import Accounts from "./components/accounts/AccountsApp";
 import Cities from "./components/cities/Cities";
 import LinkList from "./components/linklist/LinkList";
 
@@ -12,18 +12,6 @@ import TicTacIcon from "./images/game.svg";
 import AccIcon from "./images/bank.svg";
 import CityIcon from "./images/city.svg";
 import LinkListIcon from "./images/linklist.svg";
-// import Square from "./components/Square";
-// import Board from "./components/Board";
-// import Game from "./components/Game";
-
-// This site has 3 pages, all of which are rendered
-// dynamically in the browser (not server rendered).
-//
-// Although the page does not ever refresh, notice how
-// React Router keeps the URL up to date as you navigate
-// through the site. This preserves the browser history,
-// making sure things like the back button and bookmarks
-// work properly.
 
 class ReactApp extends React.Component {
   render() {
