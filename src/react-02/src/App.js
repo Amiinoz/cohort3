@@ -1,9 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
-
 import Game from "./components/game/Game";
-import Accounts from "./components/accounts/AccountsApp";
+import UserInfo from "./components/accounts/UserInfo";
 import Cities from "./components/cities/Cities";
 import LinkList from "./components/linklist/LinkList";
 
@@ -23,7 +22,6 @@ class ReactApp extends React.Component {
               <Link to='/'>
                 <img src={HomeIcon} className='home-logo' alt='Home Page' />
               </Link>
-
               <icon fill='red' className='logo' width={50} height={50} />
             </li>
             <li>
@@ -32,8 +30,8 @@ class ReactApp extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to='/Accounts'>
-                <img src={AccIcon} alt='Accounts' />
+              <Link to='/UserInfo'>
+                <img src={AccIcon} alt='UserInfo' />
               </Link>
             </li>
             <li>
@@ -66,8 +64,8 @@ class ReactApp extends React.Component {
             <Route path='/Game'>
               <Game />
             </Route>
-            <Route path='/Accounts'>
-              <Accounts />
+            <Route path='/UserInfo'>
+              <UserInfo />
             </Route>
             <Route path='/Cities'>
               <Cities />

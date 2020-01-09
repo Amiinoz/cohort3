@@ -1,6 +1,8 @@
 import React from "react";
 
-class AccountsCard extends React.Component {
+// Account that has been created
+
+class AccCards extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -20,6 +22,7 @@ class AccountsCard extends React.Component {
       <div className='accInfo'>
         <h1>Account</h1>
         <h3>Name:{this.state.accountName}</h3>
+        <h3>Account Type:</h3>
         <h3>Starting Balance:</h3>
         <button type='button' className='btn'>
           Deposit
@@ -30,13 +33,9 @@ class AccountsCard extends React.Component {
         <button type='button' className='btn'>
           Balance
         </button>
-
-        <div className='accInfo2'>
-          <h5>Account Info</h5>
-        </div>
       </div>
     );
   }
 }
 
-export default AccountsCard;
+export default AccCards;
