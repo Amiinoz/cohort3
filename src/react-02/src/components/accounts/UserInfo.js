@@ -13,14 +13,20 @@ class UserInfo extends Component {
       accountType: " ",
       startBalance: " ",
       addAccount: " ",
+      balance: " ",
+      highestBalance: " ",
+      lowestBalance: " ",
+      constructor: " ",
       deposit: " ",
       withdraw: " ",
-      total: " ",
-      highestBalance: " ",
-      lowestBalance: " "
+      addAct: " ",
+      removeAct: " ",
+      totalBal: " ",
+      amount: " "
     };
   }
   // Proceed to the next step
+
   nextStep = () => {
     const { step } = this.state;
     this.setState({
@@ -28,7 +34,7 @@ class UserInfo extends Component {
     });
   };
   // Move back one step
-  back = () => {
+  prevStep = () => {
     const { step } = this.state;
     this.setState({
       step: step - 1
@@ -40,6 +46,13 @@ class UserInfo extends Component {
       [input]: e.target.value
     });
   };
+  //FIXME:
+  //   onHandleSubmit = e => {
+  //    this.accounts.deposit(
+  //        this.state.firstName,
+  //        this.state
+  //    )
+
   render() {
     const { step } = this.state;
     const {
@@ -77,9 +90,23 @@ class UserInfo extends Component {
           />
         );
       case 2:
-        return <UserBalance />;
+        return (
+          <UserBalance
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            onHandeleChange={this.onHandeleChange}
+            values={values}
+          />
+        );
       case 3:
-        return <AccInfo />;
+        return (
+          <AccInfo
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            onHandeleChange={this.onHandeleChange}
+            values={values}
+          />
+        );
     }
   }
 }

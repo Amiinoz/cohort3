@@ -1,41 +1,90 @@
 import React from "react";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import AppBar from "material-ui/AppBar";
+import TextField from "material-ui/TextField";
+import RaisedButton from "material-ui/RaisedButton";
+import { List, ListItem } from "material-ui/List";
 
 // Account that has been created
 
-class AccCards extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      accountName: " ",
-      accountType: " ",
-      startBalance: " "
-    };
-    this.onHandleChange = this.onHandleChange.bind(this);
-  }
-  onHandleChange(event) {
+class UserBalance extends React.Component {
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+
+  prevStep = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
+  onHandeleChange = input => e => {
     this.setState({
-      [event.target.name]: event.target.value
+      [input]: e.target.value
     });
-  }
+  };
+
   render() {
+    const {
+      values: { firstName, lastName, accountType, startBalance }
+    } = this.props;
+
     return (
-      <div className='accInfo'>
-        <h1>Account</h1>
-        <h3>Name:{this.state.accountName}</h3>
-        <h3>Account Type:</h3>
-        <h3>Starting Balance:</h3>
-        <button type='button' className='btn'>
-          Deposit
-        </button>
-        <button type='button' className='btn'>
-          Withdrawl
-        </button>
-        <button type='button' className='btn'>
-          Balance
-        </button>
-      </div>
+      <MuiThemeProvider className='accInfo'>
+        <React.Fragment>
+          <AppBar title=' Account Balance' />
+          <h1>Account</h1>
+          <List>
+            <ListItem primaryText='First Name' secondaryText={firstName} />
+            <ListItem primaryText='Last Name' secondaryText={lastName} />
+            <ListItem primaryText='Account Type' secondaryText={accountType} />
+            <ListItem
+              primaryText='Starting balance'
+              secondaryText={startBalance}
+            />
+          </List>
+          <br />
+          <TextField
+            hintText='Please Enter starting balance'
+            floatingLabelText='Starting balance'
+            onChange={onHandeleChange("startBalance")}
+            defaultValue={values.deposit}
+          />
+
+          <RaisedButton
+            label='Deposit'
+            primary={true}
+            style={styles.button}
+            onClick={this.continue}
+          />
+          <RaisedButton
+            label='Withdraw'
+            primary={true}
+            style={styles.button}
+            onClick={this.continue}
+          />
+          <RaisedButton
+            label='Balance'
+            primary={true}
+            style={styles.button}
+            onClick={this.continue}
+          />
+          <RaisedButton
+            label='Back'
+            primary={false}
+            style={styles.button}
+            onClick={this.prevStep}
+          />
+          <br />
+        </React.Fragment>
+      </MuiThemeProvider>
     );
   }
 }
 
-export default AccCards;
+const styles = {
+  button: {
+    margin: 15
+  }
+};
+
+export default UserBalance;
