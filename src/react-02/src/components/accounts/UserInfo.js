@@ -1,30 +1,27 @@
 import React, { Component } from "react";
 import AccInfo from "./AccInfo";
-import UserBalance from "./UserBalance";
+import ManageAccount from "./ManageAccount";
 import CreateAcc from "./CreateAcc";
+import { ActControler } from "./accounts";
 
 class UserInfo extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       step: 1,
-      firstName: " ",
-      lastName: " ",
+      actName: " ",
       accountType: " ",
       startBalance: " ",
-      addAccount: " ",
-      balance: " ",
       highestBalance: " ",
       lowestBalance: " ",
-      constructor: " ",
-      deposit: " ",
-      withdraw: " ",
-      addAct: " ",
-      removeAct: " ",
-      totalBal: " ",
-      amount: " "
+      totalBal: " "
     };
+    // Controler
+    //   this.accounts = new ActControler("My Bank Account");
+    //   this.onHandeleChange = this.onHandeleChange.bind(this);
+    //   this.onHandleSubmit = this.onHandleSubmit.bind(this);
   }
+
   // Proceed to the next step
 
   nextStep = () => {
@@ -46,40 +43,21 @@ class UserInfo extends Component {
       [input]: e.target.value
     });
   };
-  //FIXME:
-  //   onHandleSubmit = e => {
-  //    this.accounts.deposit(
-  //        this.state.firstName,
-  //        this.state
-  //    )
 
+  // onHandleSubmit = e => {
+  //   let array = this.accounts.allAccounts;
+  //   let accountNames = array.map(array => array.accountName);
+  //   this.actName = array.map(array => array.actName);
+  //   this.accountType.addAct(this.state.actName, this.state.totalBal);
+  // };
   render() {
     const { step } = this.state;
-    const {
-      firstName,
-      lastName,
-      accountType,
-      startBalance,
-      addAccount,
-      deposit,
-      withdraw,
-      total,
-      highestBalance,
-      lowestB
-    } = this.state;
+    const { actName, accountType, startBalance } = this.state;
     const values = {
-      firstName,
-      lastName,
+      actName,
       accountType,
-      startBalance,
-      addAccount,
-      deposit,
-      withdraw,
-      total,
-      highestBalance,
-      lowestB
+      startBalance
     };
-
     switch (step) {
       case 1:
         return (
@@ -91,7 +69,7 @@ class UserInfo extends Component {
         );
       case 2:
         return (
-          <UserBalance
+          <ManageAccount
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             onHandeleChange={this.onHandeleChange}

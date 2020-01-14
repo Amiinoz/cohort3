@@ -1,4 +1,5 @@
 import React from "react";
+
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import TextField from "material-ui/TextField";
@@ -17,20 +18,14 @@ class CreateAcc extends React.Component {
     return (
       <MuiThemeProvider className='classAcc'>
         <React.Fragment>
-          <AppBar title=' Account Information' />
+          <AppBar title=' Create Account' />
           <TextField
-            hintText='Please enter your first name'
-            floatingLabelText='First Name'
-            onChange={onHandeleChange("firstName")}
-            defaultValue={values.firstName}
+            hintText='Please enter your Name'
+            floatingLabelText='Name'
+            onChange={onHandeleChange("actName")}
+            defaultValue={values.actName}
           />
-          <br />
-          <TextField
-            hintText='Please enter your Last name'
-            floatingLabelText='Last Name'
-            onChange={onHandeleChange("lastName")}
-            defaultValue={values.lastName}
-          />
+
           <br />
           <TextField
             hintText='Please enter Account type'
@@ -44,11 +39,11 @@ class CreateAcc extends React.Component {
             hintText='Please Enter starting balance'
             floatingLabelText='Starting balance'
             onChange={onHandeleChange("startBalance")}
-            defaultValue={values.deposit}
+            defaultValue={values.startBalance}
           />
           <br />
           <RaisedButton
-            label='Create Account'
+            label='Enter'
             primary={true}
             style={styles.button}
             onClick={this.continue}

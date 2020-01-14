@@ -19,21 +19,24 @@ class AccInfo extends React.Component {
 
   render() {
     const {
-      values: { highestBalance, lowestBalance, balance }
+      values: { highestBalance, lowestBalance, balance, actName }
     } = this.props;
 
     return (
       <MuiThemeProvider className='accInfo'>
         <React.Fragment>
           <AppBar title=' Account Information' />
-          <h1>Account Information</h1>
+
           <List>
+            <br />
+            <ListItem primaryText='' secondaryText={actName} />
+
             <ListItem
-              primaryText='Highest Balance'
+              primaryText='Highest Balance:'
               secondaryText={highestBalance}
             />
             <ListItem
-              primaryText='Lowest balance'
+              primaryText='Lowest balance:'
               secondaryText={lowestBalance}
             />
             <ListItem primaryText='Total' secondaryText={balance} />
