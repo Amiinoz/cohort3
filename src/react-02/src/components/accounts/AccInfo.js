@@ -19,7 +19,14 @@ class AccInfo extends React.Component {
 
   render() {
     const {
-      values: { highestBalance, lowestBalance, balance, actName }
+      values: {
+        highestBalance,
+        lowestBalance,
+        balance,
+        actName,
+        ActControler,
+        pointer
+      }
     } = this.props;
 
     return (
@@ -34,13 +41,26 @@ class AccInfo extends React.Component {
             <ListItem
               primaryText='Highest Balance:'
               secondaryText={highestBalance}
+              defaultValue={ActControler.highsVal()}
             />
             <ListItem
               primaryText='Lowest balance:'
               secondaryText={lowestBalance}
+              defaultValue={ActControler.lowsVal()}
             />
-            <ListItem primaryText='Total' secondaryText={balance} />
+            <ListItem
+              primaryText='Total:'
+              secondaryText={balance}
+              defaultValue={ActControler.totalBal()}
+            />
           </List>
+          <br />
+          <RaisedButton
+            label='Delete'
+            primary={true}
+            style={styles.button}
+            onClick={ActControler.removeAct(pointer)}
+          />
           <br />
           <RaisedButton
             label='Back'

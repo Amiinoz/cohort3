@@ -1,13 +1,21 @@
 import React from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
-import TextField from "material-ui/TextField";
-import RaisedButton from "material-ui/RaisedButton";
+// import TextField from "material-ui/TextField";
+// import RaisedButton from "material-ui/RaisedButton";
 import { List, ListItem } from "material-ui/List";
 
 // Account that has been created
 
 class ManageAccount extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      actName: " ",
+      accountType: " ",
+      startBalance: " "
+    };
+  }
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -22,27 +30,57 @@ class ManageAccount extends React.Component {
       [input]: e.target.value
     });
   };
-  // onHandleSubmit = e => {
-  //   let array = this.accounts.allAccounts;
-  //   this.actName = array.map(array => array.actName);
-  //   this.accountType.addAct(this.state.actName, this.state.totalBal);
-  // };
+
+  onHandleSubmit = e => {
+    e.preventDefault(e);
+    this.props.onSubmit(this.state);
+    this.setState({
+      actName: " ",
+      accountType: " ",
+      startBalance: " "
+    });
+  };
 
   render() {
-    const {
-      values: { actName, accountType, startBalance, onHandeleChange, values }
-    } = this.props;
-    // const { onHandleSubmit } = this.props;
+    const { actName, accountType, startBalance } = this.props;
+
     return (
       <MuiThemeProvider className='accInfo'>
         <React.Fragment>
           <AppBar title='Manage Account' />
-          <List>
-            <br />
-            <ListItem primaryText='' secondaryText={actName} />
+          <form onSubmit={this.onHandleSubmit}>
+            <List>
+              <br />
+              <ListItem
+                primaryText='Name:'
+                secondaryText={actName}
+                value={this.state.actName}
+                onChange={this.onHandeleChange}
+              />
+              <ListItem
+                primaryText='Accoutn Type:'
+                secondaryText={accountType}
+                value={this.state.accountType}
+                onChange={this.onHandeleChange}
+              />
+              <ListItem
+                primaryText='Starting Balance'
+                secondaryText={startBalance}
+                value={this.state.startBalance}
+                onChange={this.onHandeleChange}
+              />
+            </List>
+          </form>
 
-            <ListItem primaryText='' secondaryText={accountType} />
-            <ListItem primaryText='' secondaryText={startBalance} />
+          {/* //--------- */}
+          {/* <List>
+            <br />
+            <ListItem primaryText='Name:' secondaryText={actName} />
+            <ListItem primaryText='Accoutn Type:' secondaryText={accountType} />
+            <ListItem
+              primaryText='Starting Balance'
+              secondaryText={startBalance}
+            />
           </List>
           <br />
           <form noValidate autoComplete='off'>
@@ -58,6 +96,7 @@ class ManageAccount extends React.Component {
               primary={true}
               style={styles.button}
               onClick={this.continue}
+              // onClick={ActControler.deposit(amount)}
             />
             <RaisedButton
               label='Withdrawl'
@@ -77,7 +116,7 @@ class ManageAccount extends React.Component {
               style={styles.button}
               onClick={this.prevStep}
             />
-          </form>
+          </form> */}
           <br />
         </React.Fragment>
       </MuiThemeProvider>
@@ -85,10 +124,10 @@ class ManageAccount extends React.Component {
   }
 }
 
-const styles = {
-  button: {
-    margin: 15
-  }
-};
+// const styles = {
+//   button: {
+//     margin: 15
+//   }
+// };
 
 export default ManageAccount;

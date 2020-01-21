@@ -1,4 +1,4 @@
-import { Account, AccountController } from "./account.js";
+import { Account, ActControler } from "./account.js";
 
 test("account check", () => {
   const savings = new Account("savings", 25);
@@ -18,7 +18,7 @@ test("account controller", () => {
   const divElement = document.createElement("div");
   divElement.setAttribute("id", "myAccountCardsId");
 
-  const PeterPan = new AccountController("Peter", "Pan");
+  const PeterPan = new ActControler();
 
   PeterPan.createNewAccount("savings", 100);
   PeterPan.createNewAccount("chequeing", 100);

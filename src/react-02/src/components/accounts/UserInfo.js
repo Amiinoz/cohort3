@@ -1,29 +1,34 @@
 import React, { Component } from "react";
 import AccInfo from "./AccInfo";
 import ManageAccount from "./ManageAccount";
-import CreateAcc from "./CreateAcc";
+// import CreateAcc from "./CreateAcc";
+import AccCreateBank from "./AccCreateBank";
 import { ActControler } from "./accounts";
+
+// here create controler
 
 class UserInfo extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       step: 1,
+      accountId: 1,
       actName: " ",
       accountType: " ",
+      deposit: " ",
       startBalance: " ",
       highestBalance: " ",
       lowestBalance: " ",
       totalBal: " "
     };
     // Controler
-    //   this.accounts = new ActControler("My Bank Account");
-    //   this.onHandeleChange = this.onHandeleChange.bind(this);
-    //   this.onHandleSubmit = this.onHandleSubmit.bind(this);
+    this.accounts = new ActControler();
+    this.onHandeleChange = this.onHandeleChange.bind(this);
+    // this.onHandleSubmit = this.onHandleSubmit.bind(this);
   }
 
   // Proceed to the next step
-
   nextStep = () => {
     const { step } = this.state;
     this.setState({
@@ -44,12 +49,6 @@ class UserInfo extends Component {
     });
   };
 
-  // onHandleSubmit = e => {
-  //   let array = this.accounts.allAccounts;
-  //   let accountNames = array.map(array => array.accountName);
-  //   this.actName = array.map(array => array.actName);
-  //   this.accountType.addAct(this.state.actName, this.state.totalBal);
-  // };
   render() {
     const { step } = this.state;
     const { actName, accountType, startBalance } = this.state;
@@ -61,10 +60,11 @@ class UserInfo extends Component {
     switch (step) {
       case 1:
         return (
-          <CreateAcc
+          <AccCreateBank
             nextStep={this.nextStep}
             onHandeleChange={this.onHandeleChange}
             values={values}
+            ActControler={this.accounts}
           />
         );
       case 2:
@@ -73,6 +73,7 @@ class UserInfo extends Component {
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             onHandeleChange={this.onHandeleChange}
+            ActControler={this.accounts}
             values={values}
           />
         );
@@ -82,9 +83,12 @@ class UserInfo extends Component {
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             onHandeleChange={this.onHandeleChange}
+            ActControler={this.accounts}
             values={values}
           />
         );
+      default:
+      // "No default"
     }
   }
 }
