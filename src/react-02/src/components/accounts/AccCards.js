@@ -5,72 +5,59 @@ import AppBar from "material-ui/AppBar";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
-// Creates Account
-
-class CreateAcc extends React.Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
-
-  onHandeleChange = input => e => {
+class AccCards extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      accounts: this.props.account,
+      totalBalUpdate: ""
+    };
+  }
+  onHandeleChange = e => {
     this.setState({
-      [input]: e.target.value
+      totalBalUpdate: e.target.value
     });
   };
-  handleSubmit = event => {
-    event.preventDefault(event);
-    this.props.onSubmit(this.state);
+  onHandleDeposit = () => {
+    this.state.accounts.deposit(this.state.totalBalUpdate);
+
     this.setState({
-      actName: "",
-      accountType: " ",
-      startBalance: ""
+      totalBalUpdate: ""
     });
+    this.props.calcReport();
   };
-  addAccount = inputs => {
-    const { actName, strBalance } = inputs;
-    let errorMessage;
-
-    if (!actName) {
-      errorMessage = "Please enter an account name.";
-    } else {
-      errorMessage = this.accounts.addAct(actName, strBalance);
-    }
+  onHandleWithdrawal = () => {
+    this.state.accounts.withdraw(this.state.totalBalUpdate);
 
     this.setState({
-      message: errorMessage
+      totalBalUpdate: ""
     });
-    // this.calcReport();
+    this.props.calcReport();
+  };
+  onHandeleDelete = e => {
+    this.props.removeAct(this.state.accounts.actName);
   };
 
   render() {
-    const {
-      values,
-      onHandeleChange
-      // ActControler,
-      // actName,
-      // strBalance,
-      // accountType
-    } = this.props;
-
     return (
       <MuiThemeProvider className='classAcc'>
         <React.Fragment>
           <AppBar title=' Create Account' />
-          <TextField
-            hintText='Please enter your Name'
-            floatingLabelText='Name'
-            onChange={onHandeleChange("actName")}
-            // value={this.actName}
-            defaultValue={values.actName}
-          />
 
+          <TextField
+            hintText='Account'
+            floatingLabelText={this.state.accounts.actName}
+            type='Number'
+            value={this.state.totalBalUpdate}
+            onChange={this.onHandeleChange}
+          />
+          {/* 
           <br />
           <TextField
             hintText='Please enter Account type'
             floatingLabelText='Account Type'
             onChange={onHandeleChange("accountType")}
-            defaultValue={values.accountType}
+            defaultValue={acounts.accountType}
           />
           <br />
           <br />
@@ -82,7 +69,7 @@ class CreateAcc extends React.Component {
             floatingLabelText='Starting balance'
             onChange={onHandeleChange("startBalance")}
             defaultValue={values.startBalance}
-          />
+          /> */}
           <br />
           <RaisedButton
             label='Enter'
@@ -109,4 +96,4 @@ const styles = {
   }
 };
 
-export default CreateAcc;
+export default AccCards;

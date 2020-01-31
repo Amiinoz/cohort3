@@ -62,10 +62,7 @@ class AccCreateBank extends React.Component {
             <br />
             <TextField
               id='standard-number'
-              label='Number'
-              type='number'
-              hintText='Please Enter starting balance'
-              // floatingLabelText='Starting balance'
+              type='Number'
               value={this.startBalance}
               onChange={this.onHandeleChange}
             />

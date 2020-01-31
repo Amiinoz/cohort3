@@ -64,8 +64,12 @@ class ManageAccount extends React.Component {
                 onChange={this.onHandeleChange}
               />
               <ListItem
+                // primaryText='Starting Balance'
+                // secondaryText={startBalance}
+                // value={this.state.startBalance}
+                // onChange={this.onHandeleChange}
+
                 primaryText='Starting Balance'
-                secondaryText={startBalance}
                 value={this.state.startBalance}
                 onChange={this.onHandeleChange}
               />

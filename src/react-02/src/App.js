@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Game from "./components/game/Game";
 import UserInfo from "./components/accounts/UserInfo";
+// import AccApp from "./components/accounts/AccApp";
 import Cities from "./components/cities/Cities";
 import LinkList from "./components/linklist/LinkList";
 
@@ -12,7 +13,7 @@ import AccIcon from "./images/bank.svg";
 import CityIcon from "./images/city.svg";
 import LinkListIcon from "./images/linklist.svg";
 
-class ReactApp extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <Router>
@@ -30,7 +31,7 @@ class ReactApp extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to='/UserInfo'>
+              <Link to='/AccApp'>
                 <img src={AccIcon} alt='UserInfo' />
               </Link>
             </li>
@@ -83,4 +84,4 @@ class ReactApp extends React.Component {
 // You can think of these components as "pages"
 // in your app.
 
-export default ReactApp;
+export default App;

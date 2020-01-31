@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="./index.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <title>Account Exercise</title>
+</head>
+
+<body>
+  <div class="title-section">
+    <h1>Accounts Bank</h1>
+  </div>
+
+  <div id="idGridContainer">
+
+    <!-- Left - Account Summary Panel -->
+    <div id="idSummaryPanel">
+      <h2 class="subheading">Account Summary</h2>
+
+      <div class="form">
+        <h3>Create New Account</h3>
+        <label>Account Name:
+          <input id="idNewAccountName" type="text">
+        </label>
+        </br>
+        <label>Starting Balance:
+          <span class="input-symbol-dollar"><input class="amount-input-dollar" id="idInitialBalance" type="number"
+              min="0" step="0.01"></span>
+        </label>
+        </br>
+        </br>
+        <button type='button' class="btn btn-1" id="idAddAccount">Add Account</button><br><br>
+        <span id="idAccountMessage"></span>
+      </div>
+
+
+      <div class="list-section">
+        <h3 class="subheading2">Account List</h3>
+        <ul id="idAccountList">
+
+        </ul>
+      </div>
+
+      <div id="idReports" class="hidden">
+        <h3>Reports</h3>
+        <button class="btn btn-1 " type='button' id="idTotalAccounts">Total Balance</button></br></br>
+        <button class="btn btn-1 " type='button' id="idMostValuable">Most Valuable</button></br></br>
+        <button class="btn btn-1 " type='button' id="idLeastValuable">Least Valuable</button><br><br>
+        <span id="idReportMessage"></span>
+      </div>
+    </div>
+
+    <!-- Right - Account Card Panel -->
+    <div id="idCardPanel">
+      <h2>Accounts</h2>
+
+      <!-- Card Template -->
+      <!-- <div class="card" id="idPrimaryCard">
+        <h3>Primary Account</h3><br>
+        <label>Amount:
+          <span class="input-symbol-dollar"><input class="amount-input-dollar" type="number" min="0" step="0.01"></span>
+          <span>Balance: $</span><span id="idBalance"></span><br>
+        </label>
+        <input type="button" value="Balance">
+        <input id="idDeposit" type="button" value="Deposit">
+        <input id="idWithdraw" type="button" value="Withdraw">
+      </div>
+    </div>
+  </div> -->
+
+      <script type="module" src="./index.js"></script>
+</body>
+
+</html>

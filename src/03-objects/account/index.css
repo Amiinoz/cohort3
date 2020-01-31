@@ -1,0 +1,183 @@
+body {
+  background-color: rgb(227, 227, 227);
+  position: relative;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title-section {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(253, 253, 253);
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 0 0 20px;
+  overflow: hidden;
+  border: 1px solid rgb(31, 30, 30);
+}
+
+
+#idGridContainer {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+#idSummaryPanel {
+  float: left;
+  background-color: rgb(253, 253, 253);
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 0 0 20px;
+  overflow: hidden;
+  border: 1px solid rgb(31, 30, 30);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.subheading {
+  grid-column-start: span 2;
+}
+
+.subheading2 {
+  text-align: center;
+}
+
+.form>*>* {
+  margin: 0px 10px 0px 0px;
+
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-1 {
+  background: rgb(99, 184, 132);
+}
+
+.btn-2 {
+  background: rgb(211, 76, 76);
+}
+
+.btn-3 {
+  background: rgb(80, 51, 245);
+}
+
+#idAccountList {
+  list-style-type: none;
+
+}
+
+.list-section {
+  grid-row-start: span 2;
+}
+
+#idNewAccountName {
+  width: 100px;
+}
+
+#idAccountMessage {
+  color: rgb(214, 6, 6);
+}
+
+BUTTON {
+  background: rgb(211, 76, 76);
+  display: inline-block;
+  text-align: center;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+
+#idCardPanel {
+  grid-column: 2;
+  float: right;
+  background-color: rgb(253, 253, 253);
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 0 0 20px;
+  overflow: hidden;
+  border: 1px solid rgb(31, 30, 30);
+}
+
+.card {
+  background-color: rgb(253, 253, 253);
+  margin: 30px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.card>* h3 {
+  margin: 15px 3px 5px 3px;
+  float: right;
+  grid-column: 1;
+  width: 47%;
+  background-color: rgb(253, 253, 253);
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 0 0 20px;
+  overflow: hidden;
+  border: 1px solid rgb(31, 30, 30);
+
+}
+
+.delete-button .btn .btn-2 {
+
+  background: rgb(252, 54, 5);
+
+}
+
+/* --- To remove arrow buttons on number input--- */
+.amount-input-dollar::-webkit-outer-spin-button,
+.amount-input-dollar::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.amount-input-dollar[type=number] {
+  -moz-appearance: textfield;
+  /* For Firefox */
+  width: 5em;
+}
+
+/* --- Add dollar sign to number field --- */
+.input-symbol-dollar {
+  position: relative;
+}
+
+.input-symbol-dollar input {
+  padding-left: 13px;
+  width: 7em;
+}
+
+.input-symbol-dollar:before {
+  position: absolute;
+  top: 1px;
+  /* content: "$"; */
+  left: 5px;
+  color: black;
+}

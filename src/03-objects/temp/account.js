@@ -1,8 +1,8 @@
 const functions = {
   helloWorld: () => {
-    return ("Hello world from here!");
+    return "Hello world from here!";
   },
-  balanceGreater: (fakeObjArr) => {
+  balanceGreater: fakeObjArr => {
     return [2500];
   }
 };
@@ -62,9 +62,4 @@ class ActControler {
   }
 }
 
-export {
-  functions,
-  Account,
-  ActControler,
-
-}
+export { functions, Account, ActControler };

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import AccInfo from "./AccInfo";
-import ManageAccount from "./ManageAccount";
+// import AccInfo from "./AccInfo";
+// import ManageAccount from "./ManageAccount";
 // import CreateAcc from "./CreateAcc";
-import AccCreateBank from "./AccCreateBank";
+import CreateAcc from "./App";
 import { ActControler } from "./accounts";
 
 // here create controler
@@ -60,33 +60,33 @@ class UserInfo extends Component {
     switch (step) {
       case 1:
         return (
-          <AccCreateBank
+          <CreateAcc
             nextStep={this.nextStep}
             onHandeleChange={this.onHandeleChange}
             values={values}
             ActControler={this.accounts}
           />
         );
-      case 2:
-        return (
-          <ManageAccount
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            onHandeleChange={this.onHandeleChange}
-            ActControler={this.accounts}
-            values={values}
-          />
-        );
-      case 3:
-        return (
-          <AccInfo
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            onHandeleChange={this.onHandeleChange}
-            ActControler={this.accounts}
-            values={values}
-          />
-        );
+      // case 2:
+      //   return (
+      //     <ManageAccount
+      //       nextStep={this.nextStep}
+      //       prevStep={this.prevStep}
+      //       onHandeleChange={this.onHandeleChange}
+      //       ActControler={this.accounts}
+      //       values={values}
+      //     />
+      //   );
+      // case 3:
+      //   return (
+      //     <AccInfo
+      //       nextStep={this.nextStep}
+      //       prevStep={this.prevStep}
+      //       onHandeleChange={this.onHandeleChange}
+      //       ActControler={this.accounts}
+      //       values={values}
+      //     />
+      //   );
       default:
       // "No default"
     }
