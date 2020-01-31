@@ -57,7 +57,7 @@ const viewFunctions = {
     newCard.appendChild(document.createElement("BR"));
 
     let depositButton = document.createElement("BUTTON");
-    depositButton.class = "btn btn-2";
+
     depositButton.textContent = "Deposit";
     newCard.appendChild(depositButton);
 
@@ -67,7 +67,6 @@ const viewFunctions = {
 
     let deleteButton = document.createElement("BUTTON");
     deleteButton.textContent = "Delete";
-    deleteButton.className = "delete-button";
     newCard.appendChild(deleteButton);
   },
 

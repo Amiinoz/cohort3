@@ -4,10 +4,6 @@ import viewFunctions from "./viewFunctions.js";
 const accountController = new AccountController();
 
 idGridContainer.addEventListener("click", event => {
-  // console.log(event)
-
-  /*Account Summary*/
-
   if (event.target.id === "idAddAccount") {
     if (idNewAccountName.value === "") {
       idAccountMessage.textContent = "Enter your account name.";
