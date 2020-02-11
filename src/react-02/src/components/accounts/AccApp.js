@@ -1,199 +1,140 @@
-import React from "react";
-
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
-import TextField from "material-ui/TextField";
-import RaisedButton from "material-ui/RaisedButton";
-import { ActControler } from "./account.js";
+import React, { Component } from "react";
+import "./accAppStyle.css";
 import AccCards from "./AccCards";
-import AccForms from "./AccForms";
-
-// Creates Account
-
-class AccApp extends React.Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
-
-  onHandeleChange = input => e => {
-    this.setState({
-      [input]: e.target.value
-    });
-  };
-  handleSubmit = event => {
-    event.preventDefault(event);
-    this.props.onSubmit(this.state);
-    this.setState({
-      actName: "",
-      accountType: " ",
-      strBalance: ""
-    });
-    this.acctControler = new ActControler();
-  };
-  addAccount = inputs => {
-    const { actName, strBalance } = inputs;
-    let errorMessage;
-
-    if (!actName) {
-      errorMessage = "Please enter an account name.";
-    } else {
-      errorMessage = this.accounts.addAct(actName, strBalance);
-    }
-
-    this.setState({
-      message: errorMessage
-    });
-    this.calCulateRep();
-  };
-  //delete accaount
-  removeAct = actName => {
-    this.acctControler.removeAct(actName);
-    this.calCulateRep();
-  };
-  //FIXME:
-  // calCulateRep
-  calCulateRep = () => {
-    this.setState({
-      totalBalance: ""
-    });
-
-    if (this.acctControler.allAccounts.length > 1) {
-      document.getElementById("idReport").classList.remove("hidden");
-
-      const totalBalUpdate = this.acctControler.totalBal();
-      const highsValUpdate = this.acctControler.highsVal().actName;
-      const lowsValUpdate = this.acctControler.lowsVal().actName;
-
-      this.setState({
-        totalBal: totalBalUpdate,
-        highsVal: highsValUpdate,
-        lowsVal: lowsValUpdate
-      });
-      // } else {
-      //   document.getElementById("idReport").classList.add("hidden");
-      // }
-    }
-  };
-  // createCards = () => {
-  //   return this.acctControler.allAccounts.map(account => {
-  //     return (
-  //       <CreateCards
-  //         key={this.accounts.actName}
-  //         account={this.accounts}
-  //         calcReport={this.calCulateRep}
-  //         removeAccount={this.removeAct}
-  //       />
-  //     );
-  //   });
-  // };
-
-  render() {
-    const {
-      values,
-      onHandeleChange,
-      actName,
-      strBalance
-      // accountType
-    } = this.props;
-
-  
-    // const { step } = this.state;
-    // const { actName, accountType, startBalance } = this.state;
-    // const values = {
-    //   actName,
-    //   accountType,
-    //   startBalance
-    // };
-    switch (step) {
-      case 1:
-        return (
-          <CreateAcc
-            nextStep={this.nextStep}
-            onHandeleChange={this.onHandeleChange}
-            values={values}
-            ActControler={this.accounts}
-          />
-        );
-      case 2:
-        return (
-          <ManageAccount
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            onHandeleChange={this.onHandeleChange}
-            ActControler={this.accounts}
-            values={values}
-          />
-        );
-      case 3:
-        return (
-          <AccInfo
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            onHandeleChange={this.onHandeleChange}
-            ActControler={this.accounts}
-            values={values}
-          />
-        );
-      default:
-      // "No default"
-    }
+import { AccountController } from "./account.js";
+// initialize state
+class AccApp extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      currentBalance: "",
+      totalbalance: " ",
+      highestBalance: " ",
+      lowestBalance: " "
+    };
+    // call the account controller from pojo
+    this.accAccountController = new AccountController();
   }
+  // get input values from name and starting balance
+  onHandleInputChange = e => {
+    // console.log(e.target.name, e.target.value);
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+  // create account and set state for name and current balance
+  // onHandleCreateAcc = event => {
+  //   event.preventDefault();
+  onHandleCreateAcc = event => {
+    event.preventDefault();
+    this.accAccountController.createAccount(
+      this.state.name,
+      this.state.currentBalance
+    );
+    this.accCalculate();
 
-  //   return (
-  //     <MuiThemeProvider className='classAcc'>
-  //       <React.Fragment>
-  //         <AppBar title=' Create Account' />
-  //         <TextField
-  //           hintText='Please enter your Name'
-  //           floatingLabelText='Name'
-  //           onChange={onHandeleChange("actName")}
-  //           value={values.actName}
-  //           defaultValue={this.accounts.actName}
-  //         />
+    // console.log(this.accAccountController.accountArray);
+    this.setState({
+      name: "",
+      currentBalance: ""
+    });
+  };
+  // call the delete function from pojo and set state
+  onHandleDelete = name => {
+    this.accAccountController.removeAccount(name);
+    this.accCalculate();
+    this.setState({
+      name: ""
+    });
+    // console log to see in action
+    // console.log(this.accAccountController.highestBalance());
+    // console.log(this.accAccountController.accountArray);
+  };
+  // create calculate function for total highest and lowest balances
 
-  //         <br />
-  //         <TextField
-  //           hintText='Please enter Account type'
-  //           floatingLabelText='Account Type'
-  //           onChange={onHandeleChange("accountType")}
-  //           defaultValue={this.acounts.accountType}
-  //         />
-  //         <br />
-  //         <br />
-  //         <TextField
-  //           id='standard-number'
-  //           label='Number'
-  //           type='number'
-  //           hintText='Please Enter starting balance'
-  //           floatingLabelText='Starting balance'
-  //           onChange={onHandeleChange("startBalance")}
-  //           defaultValue={this.accounts.startBalance}
-  //         />
-  //         <br />
-  //         <RaisedButton
-  //           label='Enter'
-  //           primary={true}
-  //           style={styles.button}
-  //           onClick={ActControler.addAct(actName, strBalance)}
-  //           // onClick={this.addAccount}
-  //         />
-  //         <RaisedButton
-  //           label='Next'
-  //           primary={false}
-  //           style={styles.button}
-  //           onClick={this.continue}
-  //         />
-  //         <br />
-  //       </React.Fragment>
-  //     </MuiThemeProvider>
-  //   );
-  // }
+  accCalculate = () => {
+    this.setState({
+      totalbalance: this.accAccountController.totalAccounts(),
+      highestBalance: this.accAccountController.mostValuableAccount()
+        .currentBalance,
+      lowestBalance: this.accAccountController.leastValuableAccount()
+        .currentBalance
+    });
+    // console.log(this.totalbalance);
+  };
+  // create render function and get account array from pojo and map it
+  renderAccCards = () => {
+    return this.accAccountController.accountArray.map(allAcc => {
+      // debugger;
+      // console.log("allAcc: ", allAcc);
+      return (
+        <AccCards
+          key={allAcc.name}
+          account={allAcc}
+          calculate={this.accCalculate}
+          accDelete={this.onHandleDelete}
+        />
+      );
+    });
+  };
+  // show and hide manage account info
+  accDisplayInfo = () => {
+    document.getElementById("show").style.visibility = "hidden";
+  };
+  // render inputs and
+  render() {
+    return (
+      <div className='container'>
+        <h1>Bank X </h1>
+        <div className='left_side'>
+          <form onSubmit={this.handleSubmit}>
+            <h3>Create Bank Account</h3>
+            <label>
+              Account Name:
+              <input
+                className='input'
+                id='idAccName'
+                type='text'
+                placeholder='Enter Name '
+                name='name'
+                value={this.state.name}
+                onChange={this.onHandleInputChange}
+              />
+            </label>
+            <label>
+              Starting Balance $:
+              <input
+                className='input'
+                id='idStarBal'
+                type='number'
+                placeholder='Enter amount to start'
+                name='currentBalance'
+                value={this.state.currentBalance}
+                onChange={this.onHandleInputChange}
+              />
+            </label>
+            <button
+              className='accCreate btn btn-1'
+              onClick={this.onHandleCreateAcc}
+            >
+              Create Account
+            </button>
+            <h2>Manage Account</h2>
+            {this.renderAccCards()}
 
-// const styles = {
-//   button: {
-//     margin: 15
-//   }
-// };
+            <br />
+          </form>
+        </div>
+        <div className='right_side'>
+          <h3>Accounts Balances</h3>
+          <h4 className='show'>Highest Account: {this.state.highestBalance}</h4>
+          <h4 className='show'>Lowest Account: {this.state.lowestBalance}</h4>
+          <h4 className='show'>Total Balance: {this.state.totalbalance}</h4>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default AccApp;

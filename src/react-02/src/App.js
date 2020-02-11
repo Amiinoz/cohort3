@@ -1,12 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./components/Home/Home.js";
 import Game from "./components/game/Game";
-import UserInfo from "./components/accounts/UserInfo";
-// import AccApp from "./components/accounts/AccApp";
+import AccApp from "./components/accounts/AccApp";
 import Cities from "./components/cities/Cities";
 import LinkList from "./components/linklist/LinkList";
-
 import HomeIcon from "./images/home.svg";
 import TicTacIcon from "./images/game.svg";
 import AccIcon from "./images/bank.svg";
@@ -20,7 +18,7 @@ class App extends React.Component {
         <div className='classRecApp'>
           <ul>
             <li>
-              <Link to='/'>
+              <Link to='/Home'>
                 <img src={HomeIcon} className='home-logo' alt='Home Page' />
               </Link>
               <icon fill='red' className='logo' width={50} height={50} />
@@ -32,7 +30,7 @@ class App extends React.Component {
             </li>
             <li>
               <Link to='/AccApp'>
-                <img src={AccIcon} alt='UserInfo' />
+                <img src={AccIcon} alt='AccApp' />
               </Link>
             </li>
             <li>
@@ -59,14 +57,14 @@ class App extends React.Component {
             of them to render at a time
           */}
           <Switch>
-            <Route exact path='/'>
+            <Route exact path='/Home'>
               <Home />
             </Route>
             <Route path='/Game'>
               <Game />
             </Route>
-            <Route path='/UserInfo'>
-              <UserInfo />
+            <Route path='/AccApp'>
+              <AccApp />
             </Route>
             <Route path='/Cities'>
               <Cities />

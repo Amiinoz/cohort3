@@ -1,99 +1,78 @@
 import React from "react";
-
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
-import TextField from "material-ui/TextField";
-import RaisedButton from "material-ui/RaisedButton";
+// import { AccountController } from "./account.js";
 
 class AccCards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      accounts: this.props.account,
-      totalBalUpdate: ""
+      updateCurrentBalance: "",
+      updateStarBalance: ""
     };
+    // this.accAccountContro ller = new AccountController();
   }
-  onHandeleChange = e => {
+  onHandleInputChange2 = e => {
     this.setState({
-      totalBalUpdate: e.target.value
+      [e.target.name]: e.target.value
     });
   };
-  onHandleDeposit = () => {
-    this.state.accounts.deposit(this.state.totalBalUpdate);
 
+  onHandleDeposit = event => {
+    event.preventDefault();
+    // console.log("onHandleDeposit");
+    this.props.account.deposit(Number(this.state.updateCurrentBalance));
     this.setState({
-      totalBalUpdate: ""
+      updateCurrentBalance: "",
+      updateStarBalance: this.props.account.balance
     });
-    this.props.calcReport();
+    this.props.calculate();
   };
-  onHandleWithdrawal = () => {
-    this.state.accounts.withdraw(this.state.totalBalUpdate);
-
+  onHandleWhitdrawal = event => {
+    event.preventDefault();
+    this.props.account.withdraw(Number(this.state.updateCurrentBalance));
     this.setState({
-      totalBalUpdate: ""
+      updateCurrentBalance: "",
+      updateStarBalance: this.props.account.balance
     });
-    this.props.calcReport();
+    this.props.calculate();
   };
-  onHandeleDelete = e => {
-    this.props.removeAct(this.state.accounts.actName);
-  };
-
   render() {
     return (
-      <MuiThemeProvider className='classAcc'>
-        <React.Fragment>
-          <AppBar title=' Create Account' />
+      <div className='left_side-2' id='dispCards'>
+        <h4>Account holder:{this.props.account.name} </h4>
+        <h4>Balance: {this.props.account.currentBalance}</h4>
 
-          <TextField
-            hintText='Account'
-            floatingLabelText={this.state.accounts.actName}
-            type='Number'
-            value={this.state.totalBalUpdate}
-            onChange={this.onHandeleChange}
-          />
-          {/* 
-          <br />
-          <TextField
-            hintText='Please enter Account type'
-            floatingLabelText='Account Type'
-            onChange={onHandeleChange("accountType")}
-            defaultValue={acounts.accountType}
-          />
-          <br />
-          <br />
-          <TextField
-            id='standard-number'
-            label='Number'
-            type='number'
-            hintText='Please Enter starting balance'
-            floatingLabelText='Starting balance'
-            onChange={onHandeleChange("startBalance")}
-            defaultValue={values.startBalance}
-          /> */}
-          <br />
-          <RaisedButton
-            label='Enter'
-            primary={true}
-            style={styles.button}
-            // onClick={ActControler.addAct(actName, strBalance)}
-            onClick={this.addAccount}
-          />
-          <RaisedButton
-            label='Next'
-            primary={false}
-            style={styles.button}
-            onClick={this.continue}
-          />
-          <br />
-        </React.Fragment>
-      </MuiThemeProvider>
+        <input
+          className='input'
+          id='idCurrBal'
+          type='number'
+          placeholder=' Please enter amount to '
+          name='updateCurrentBalance'
+          value={this.state.updateCurrentBalance}
+          onChange={this.onHandleInputChange2}
+        />
+        <br />
+        <button
+          className='accAddtoDeposit btn btn-2'
+          onClick={this.onHandleDeposit}
+        >
+          Deposit
+        </button>
+        <button
+          className='accSubWithdraw btn'
+          onClick={this.onHandleWhitdrawal}
+        >
+          withdraw
+        </button>
+
+        <button
+          className='accDeleteAcc btn btn-3'
+          onClick={() => this.props.removeAccount(this.props.account.name)}
+        >
+          Delete
+        </button>
+      </div>
     );
   }
 }
-const styles = {
-  button: {
-    margin: 15
-  }
-};
 
 export default AccCards;
