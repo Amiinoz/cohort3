@@ -1,6 +1,6 @@
 import React from "react";
-// import { AccountController } from "./account.js";
 
+//initialize state
 class AccCards extends React.Component {
   constructor(props) {
     super(props);
@@ -8,8 +8,8 @@ class AccCards extends React.Component {
       updateCurrentBalance: "",
       updateStarBalance: ""
     };
-    // this.accAccountContro ller = new AccountController();
   }
+  // get both input
   onHandleInputChange2 = e => {
     this.setState({
       [e.target.name]: e.target.value

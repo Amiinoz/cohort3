@@ -11,12 +11,12 @@ const viewFunctions = {
       idAccountList.appendChild(newAccount);
     });
   },
-
+  // create account with name and starting balance
   createAccountCard: (accountName, accountBalance) => {
     let newCard = document.createElement("DIV");
     newCard.id = accountName;
     newCard.className = "card";
-
+    //add the header
     let accountHeader = document.createElement("H3");
     accountHeader.textContent = accountName;
     newCard.appendChild(accountHeader);
@@ -72,6 +72,7 @@ const viewFunctions = {
 
   deleteCard: card => {
     card.remove();
+    console.log("Iam delete button");
   }
 };
 

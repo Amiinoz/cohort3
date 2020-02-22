@@ -1,8 +1,10 @@
+// import AccountController and viewFunctions
 import { AccountController } from "./account.js";
 import viewFunctions from "./viewFunctions.js";
 
+// instatiate AccountController
 const accountController = new AccountController();
-
+// add event listener to the main container
 idGridContainer.addEventListener("click", event => {
   if (event.target.id === "idAddAccount") {
     if (idNewAccountName.value === "") {
@@ -87,10 +89,10 @@ idGridContainer.addEventListener("click", event => {
   }
 
   if (event.target.className === "delete-button") {
-    let card = event.target.parentElement;
-    accountController.removeAccount(card.id);
+    let accountCard = event.target.parentElement;
+    accountController.removeAccount(accountCard.id);
     viewFunctions.refreshAccountList(accountController.getAccounts());
-    viewFunctions.deleteCard(card);
+    viewFunctions.deleteCard(accountCard);
     if (accountController.getAccounts().length < 1) {
       idReports.classList.add("hidden");
     }

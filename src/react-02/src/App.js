@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home/Home.js";
 import Game from "./components/game/Game";
 import AccApp from "./components/accounts/AccApp";
-import Cities from "./components/cities/Cities";
+import CittApp from "./components/cities/CittApp";
 import LinkList from "./components/linklist/LinkList";
 import HomeIcon from "./images/home.svg";
 import TicTacIcon from "./images/game.svg";
@@ -34,9 +34,9 @@ class App extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to='/Cities'>
+              <Link to='/CittApp'>
                 {" "}
-                <img src={CityIcon} alt='Cities' />
+                <img src={CityIcon} alt='CittApp' />
               </Link>
             </li>
             <li>
@@ -66,8 +66,8 @@ class App extends React.Component {
             <Route path='/AccApp'>
               <AccApp />
             </Route>
-            <Route path='/Cities'>
-              <Cities />
+            <Route path='/CittApp'>
+              <CittApp />
             </Route>
             <Route path='/LinkList'>
               <LinkList />

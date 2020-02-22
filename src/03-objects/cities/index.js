@@ -1,37 +1,36 @@
-import {
-    functions,
-    City,
-    CityControler
-} from "./cities.js";
-// --------Google Maps -----------
+import {ComunityControler, City, Functions, functions} from './cities.js'
 
-const count = 0;
-const community = new CityControler();
+const url = "http://localhost:5000/"
+let inquireCommKey;
+const newComunityControler = new ComunityControler();
+let choosenCity;
+let currentCity, currentCityCommKey;
 
-function myMap() {
-    var mapProp = {
-        center: new google.maps.LatLng(43.666667, -79.416667),
-        zoom: 5
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-}
+document.addEventListener('LoadData', async () => {
+  await fetchStart.loadData(newComunityControler);
+  let dispMassage;
+  let displayK;
+  if(newComunityControler.cities.length < 1 ){
+    alert("No data was found");
+  }else{
+    alert("Present date")
 
-// create the city card
-const addCityButon = document.getElementById("idAddCity");
-console.log(addCityButon);
+    document.getElementById("panel-right");
+    for(let i=0; i < newComunityControler.cities.lenght; i++ ){
+      message=`City: ${newComunityControler.cities[i].name},  `+
+      `CityLatitude: ${newComunityControler.cities[i].latitude}, 
+      CityLongatude: ${newComunityControler.cities[i].longitude}, CityPopulation: ${newComunityControler.cities[i].population}`;
+      inquireCommKey=newComunityControler.cities[i].commKey;
+      functions.addCard(document.getElementById("panel").dispMassage.displayK)
 
-addCityButon.addEventListener('click', function () {
-    console.log("Heloo world");
+    }
+  }
 })
 
-addCityButon.addEventListener('click', functions.newCity);
+addCityBtn.addEventListener("click", async function() {
+  inquireCommKey= 
+})
 
-// function newCity() {
+i
 
-//     functions.count++;
-//     let newOl = document.createElement("li");
-//     newOl.setAttribute("class", "cityInfo");
-//     newOl.textContent = ` Card {}`
-//     ncity.appendChild(newOl);
 
-// }
