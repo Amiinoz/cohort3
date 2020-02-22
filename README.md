@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="evolveU.png" alt="Bot logo"></a>
+ <img src="images/evolveU.png" alt="Bot logo"></a>
 </p>
 
 <div align="center">
