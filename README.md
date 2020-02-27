@@ -112,9 +112,6 @@ reference
 │   └──  README.md
 ```
 
-## ✍️ Authors <a name = "authors"></a>
-
-- Mohamed Magan
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
